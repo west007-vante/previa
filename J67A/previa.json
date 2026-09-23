@@ -1,0 +1,18 @@
+{
+  "codigo": "J67A",
+  "negocio": "Oriente Pet Shop",
+  "cidade": "Ribeirão Preto",
+  "nicho": "pet",
+  "marca": "Steve",
+  "gerada_em": "2026-09-23T08:12:55.821865-03:00",
+  "expira_em": "2026-09-30T23:59:59-03:00",
+  "validade_dias": 7,
+  "wa_oficial": "https://wa.me/5500000000000?text=Vi%20a%20pr%C3%A9via%20do%20Oriente%20Pet%20Shop%20%28c%C3%B3digo%20J67A%29",
+  "wa_oficial_placeholder": true,
+  "wa_negocio": "https://wa.me/5516991051410?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Oriente%20Pet%20Shop.",
+  "cor": "#D98A6A",
+  "telemetria": {
+    "endpoint": ""
+  },
+  "url": "https://west007-vante.github.io/previa/J67A/"
+}
