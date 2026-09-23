@@ -1,0 +1,100 @@
+/* ===========================================================================
+   prévia — camada de cima do mundo 3D. Nada aqui mexe no scrub-engine.
+   z-index do motor vai até 60; a prévia usa 200+ e a marca d'água 9000.
+   =========================================================================== */
+
+/* ---------- marca d'água: prova de autoria, não tarja ----------
+   Camada fixa, diagonal, repetida, por cima de TUDO (inclusive do vídeo).
+   pointer-events:none — não atrapalha rolar, clicar ou tocar.
+   O ladrilho é um SVG embutido gerado na hora da prévia (texto + código do lead),
+   desenhado duas vezes (escuro + claro) para ficar legível sobre cena clara e escura. */
+.pv-wm { position: fixed; inset: 0; z-index: 9000; pointer-events: none; overflow: hidden;
+         contain: strict; }
+.pv-wm__tile { position: absolute; inset: -60%; transform: rotate(-24deg);
+               background-repeat: repeat; opacity: .62; }
+@media (max-width: 860px) { .pv-wm__tile { opacity: .48; background-size: 340px auto; } }
+@media print { .pv-wm__tile { opacity: .75; } }
+
+/* crachá legível — a parte que se lê sem esforço. Mora dentro da barra de ação
+   para nunca cobrir a copy do motor (que é ancorada no canto de baixo). */
+.pv-selo { display: inline-flex; align-items: center; gap: 8px; pointer-events: none;
+           font: 600 11px/1 var(--sw-font-body, system-ui); letter-spacing: .06em;
+           color: color-mix(in srgb, var(--pv-ink, #2E3A3F) 64%, transparent);
+           background: color-mix(in srgb, #fff 62%, transparent);
+           -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+           border: 1px solid color-mix(in srgb, var(--pv-accent, #D98A6A) 28%, transparent);
+           border-radius: 999px; padding: 8px 13px; text-transform: uppercase; white-space: nowrap; }
+.pv-selo b { color: var(--pv-accent, #D98A6A); font-weight: 800; letter-spacing: .1em; }
+.pv-selo i { font-style: normal; opacity: .74; text-transform: none; letter-spacing: 0; }
+
+/* ---------- barra de ação (o que o vendedor quer que aconteça) ---------- */
+.pv-barra { position: fixed; z-index: 400; right: clamp(12px, 4vw, 26px);
+            bottom: calc(clamp(12px, 3vh, 22px) + env(safe-area-inset-bottom));
+            display: flex; gap: 10px; align-items: center; }
+.pv-barra a, .pv-barra span.pv-off {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  font: 700 .92rem var(--sw-font-body, system-ui); padding: 14px 22px; border-radius: 999px;
+  transition: transform .18s ease, box-shadow .18s ease; white-space: nowrap; }
+.pv-quero { color: #fff; background: var(--pv-ink, #2E3A3F);
+            box-shadow: 0 10px 30px color-mix(in srgb, var(--pv-ink, #2E3A3F) 34%, transparent); }
+.pv-quero:hover { transform: translateY(-2px); }
+.pv-quero b { color: var(--pv-accent, #D98A6A); }
+.pv-off { color: #6B7A7E; background: color-mix(in srgb, #fff 70%, transparent);
+          border: 1px dashed #b9c2c4; cursor: not-allowed; font-weight: 600; }
+@media (max-width: 860px) {
+  .pv-barra { left: clamp(12px, 4vw, 26px); right: clamp(12px, 4vw, 26px);
+              flex-direction: column; align-items: stretch; gap: 8px; }
+  .pv-barra a, .pv-barra span.pv-off { justify-content: center; padding: 15px 16px; font-size: .95rem; }
+  .pv-selo { order: -1; align-self: center; font-size: 10px; padding: 6px 11px; }
+  /* o motor ancora a copy e a dica no rodapé — subo as duas para a barra não cobrir */
+  .sw-copy { bottom: calc(clamp(56px, 12dvh, 110px) + 78px + env(safe-area-inset-bottom)) !important; }
+  /* no celular a barra de ação já ocupa o rodapé: a dica de rolagem do motor
+     brigaria com as tags da copy, então some. */
+  .sw-hint { display: none !important; }
+}
+
+/* ---------- rodapé do negócio (o que o dono de loja mais recebe pergunta) ---------- */
+/* O rodapé sobe POR CIMA das camadas fixas do motor (stage 10 / copy 20 / topbar 50):
+   ao chegar no fim do voo ele cobre o mundo em vez de brigar com a última copy. */
+.pv-fim { position: relative; z-index: 300; background: var(--pv-ink, #2E3A3F); color: #F4EDE3;
+          padding: clamp(56px, 9vw, 96px) clamp(20px, 5vw, 48px) 120px; }
+.pv-fim__in { max-width: 1080px; margin: 0 auto; display: grid;
+              grid-template-columns: 1.25fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
+.pv-fim h2 { font-family: var(--sw-font-display, Georgia, serif); font-weight: 800;
+             font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1; margin: 0 0 28px; letter-spacing: -.02em; }
+.pv-fim h2 em { font-style: normal; color: var(--pv-accent, #D98A6A); }
+.pv-fim dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 14px 22px; font-size: 1rem; }
+.pv-fim dt { color: color-mix(in srgb, var(--pv-accent, #D98A6A) 80%, #fff); font-weight: 700; white-space: nowrap; }
+.pv-fim dd { margin: 0; color: #E7DED2; }
+.pv-fim dd a { color: #fff; }
+.pv-acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.pv-acoes a { display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+              font-weight: 700; font-size: .95rem; padding: 14px 24px; border-radius: 14px; }
+.pv-zap { background: #25D366; color: #08301a; }
+.pv-mapa { background: transparent; color: #F4EDE3; border: 1.5px solid rgba(244,237,227,.32); }
+.pv-nota { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
+           font-size: .9rem; color: #E7DED2; background: rgba(255,255,255,.07);
+           padding: 8px 14px; border-radius: 999px; }
+.pv-nota b { color: #F2C66D; }
+.pv-rodape { max-width: 1080px; margin: clamp(40px, 7vw, 72px) auto 0; padding-top: 24px;
+             border-top: 1px solid rgba(244,237,227,.14); color: #9AA7A9; font-size: .78rem; line-height: 1.6; }
+@media (max-width: 760px) { .pv-fim__in { grid-template-columns: 1fr; gap: 36px; } }
+
+/* ---------- prévia expirada: o prazo é de verdade ---------- */
+.pv-expirada { position: fixed; inset: 0; z-index: 9500; display: none;
+               place-items: center; text-align: center; padding: 28px;
+               background: var(--pv-ink, #2E3A3F); color: #F4EDE3; }
+html.pv-morta .pv-expirada { display: grid; }
+html.pv-morta body > *:not(.pv-expirada) { display: none !important; }
+html.pv-morta { overflow: hidden; }
+.pv-expirada__in { max-width: 460px; }
+.pv-expirada h1 { font-family: var(--sw-font-display, Georgia, serif); font-weight: 800;
+                  font-size: clamp(1.9rem, 7vw, 2.8rem); line-height: 1.05; margin: 20px 0 14px; }
+.pv-expirada p { color: #C7D0D1; line-height: 1.6; margin: 0 0 28px; }
+.pv-expirada__cod { font: 700 .74rem/1 ui-monospace, Menlo, monospace; letter-spacing: .22em;
+                    text-transform: uppercase; color: var(--pv-accent, #D98A6A);
+                    border: 1px solid color-mix(in srgb, var(--pv-accent, #D98A6A) 40%, transparent);
+                    border-radius: 999px; padding: 9px 16px; display: inline-block; }
+.pv-expirada a { display: inline-block; text-decoration: none; font-weight: 700;
+                 background: var(--pv-accent, #D98A6A); color: #23292b; padding: 15px 28px; border-radius: 14px; }
+.pv-expirada small { display: block; margin-top: 22px; color: #7F8C8E; font-size: .76rem; }
