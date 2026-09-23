@@ -1,0 +1,18 @@
+{
+  "codigo": "7CXV",
+  "negocio": "Clínica Amigo Fiel",
+  "cidade": "Ribeirão Preto",
+  "nicho": "pet",
+  "marca": "Steve",
+  "gerada_em": "2026-09-23T06:39:29.372606-03:00",
+  "expira_em": "2026-09-30T23:59:59-03:00",
+  "validade_dias": 7,
+  "wa_oficial": "https://wa.me/5500000000000?text=Vi%20a%20pr%C3%A9via%20do%20Cl%C3%ADnica%20Amigo%20Fiel%20%28c%C3%B3digo%207CXV%29",
+  "wa_oficial_placeholder": true,
+  "wa_negocio": null,
+  "cor": "#D98A6A",
+  "telemetria": {
+    "endpoint": ""
+  },
+  "url": "https://west007-vante.github.io/previa/7CXV/"
+}

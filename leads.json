@@ -5,9 +5,18 @@
       "negocio": "Pet Shop Vila Nova",
       "cidade": "Franca",
       "nicho": "pet",
-      "gerada_em": "2026-09-23T06:33:00.090602-03:00",
+      "gerada_em": "2026-09-23T06:39:29.218603-03:00",
       "expira_em": "2026-09-30T23:59:59-03:00",
       "url": "https://west007-vante.github.io/previa/XF73/"
+    },
+    {
+      "codigo": "7CXV",
+      "negocio": "Clínica Amigo Fiel",
+      "cidade": "Ribeirão Preto",
+      "nicho": "pet",
+      "gerada_em": "2026-09-23T06:39:29.372606-03:00",
+      "expira_em": "2026-09-30T23:59:59-03:00",
+      "url": "https://west007-vante.github.io/previa/7CXV/"
     }
   ]
 }
