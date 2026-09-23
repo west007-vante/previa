@@ -195,28 +195,42 @@ function mountScrollWorld(container, config) {
     window.scrollTo({ top: seg.start + (seg.end - seg.start) * 0.5, behavior: reduce ? 'auto' : 'smooth' });
   }
 
-  function loadClip(s) {
+  function makeVideo(s, src) {
+    const v = document.createElement('video');
+    v.className = 'sw-scene__video';
+    v.muted = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+    v.src = src;
+    v.addEventListener('loadedmetadata', () => { s.ready = true; read(); });
+    // Reveal the video (hide the still poster) only once a real frame has
+    // painted — on iOS a seeked-but-never-played muted video stays blank, so
+    // hiding the still on metadata alone would flash an empty scene.
+    v.addEventListener('seeked', () => { s.el.classList.add('has-clip'); }, { once: true });
+    v.addEventListener('loadeddata', () => { try { v.pause(); } catch (e) {} if (userReady) primeVideo(v); });
+    s.el.appendChild(v); s.video = v; s.hasClip = true;
+  }
+
+  let fetching = 0;   // phones: how many clips are downloading right now
+  function loadClip(s, priority) {
     // Under prefers-reduced-motion we never load the clips at all — the stills stay up
     // and simply cross-dissolve as you scroll. No scrubbed video motion, no decode cost.
     if (reduce || s.loading || !s.clip) return;
-    s.loading = true;
+    // One clip at a time on a phone (the scene you're in may always jump the queue).
+    // Eleven parallel downloads on mobile data share the pipe so evenly that the clip you
+    // are actually looking at arrives last; queueing makes the current scene land first.
+    if (isMobile() && fetching > 0 && !priority) return;
+    s.loading = true; fetching++;
     // Serve the lighter mobile encode on phones when one was provided.
     const url = (isMobile() && s.clipM) ? s.clipM : s.clip;
+    // Always Blob-first, including phones: a video served straight from a URL can only be
+    // scrubbed when the host answers byte-range requests. Hosts that don't (python's
+    // http.server, some static CDNs) pin `seekable` to [0,0] and every seek snaps back to
+    // frame 0 — the clip paints but never animates. The phone fix is weight, not streaming:
+    // small `-m.mp4` encodes plus the tighter prefetch window below.
     fetch(url).then(r => r.ok ? r.blob() : Promise.reject(new Error('404')))
-      .then(blob => {
-        const v = document.createElement('video');
-        v.className = 'sw-scene__video';
-        v.muted = true; v.playsInline = true; v.preload = 'auto';
-        v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
-        v.src = URL.createObjectURL(blob);
-        v.addEventListener('loadedmetadata', () => { s.ready = true; read(); });
-        // Reveal the video (hide the still poster) only once a real frame has
-        // painted — on iOS a seeked-but-never-played muted video stays blank, so
-        // hiding the still on metadata alone would flash an empty scene.
-        v.addEventListener('seeked', () => { s.el.classList.add('has-clip'); }, { once: true });
-        v.addEventListener('loadeddata', () => { try { v.pause(); } catch (e) {} if (userReady) primeVideo(v); });
-        s.el.appendChild(v); s.video = v; s.hasClip = true;
-      }).catch(() => { s.loading = false; });
+      .then(blob => makeVideo(s, URL.createObjectURL(blob)))
+      .catch((e) => { s.loading = false; if (window.console) console.warn('[scroll-world] clipe falhou:', url, e && e.message); })
+      .finally(() => { fetching--; read(); });   // libera a fila e reavalia o que carregar
   }
 
   function read() {
@@ -227,7 +241,10 @@ function mountScrollWorld(container, config) {
 
     for (let i = 0; i < NSEG; i++) {
       const s = SEGMENTS[i];
-      if (y > s.start - 1.6 * vh && y < s.end + 1.6 * vh) loadClip(s);
+      // Phones get a tighter prefetch window: on mobile data, starting eleven clips at once
+      // splits the bandwidth so evenly that none of them paints in time.
+      const win = isMobile() ? 0.7 : 1.6;
+      if (y > s.start - win * vh && y < s.end + win * vh) loadClip(s, i === ci);
       const local = clamp((y - s.start) / (s.end - s.start), 0, 1);
       s.target = s.linger ? lingerEase(local, s.linger) : local;
       let outside = 0;
