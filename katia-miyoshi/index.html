@@ -84,6 +84,19 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
 .linha-contato{font-size:var(--t1);color:var(--tinta-2)}
 .linha-contato a{font-weight:500}
 
+/* ---- plano B do vídeo: se o autoplay for barrado, o visitante VÊ um play ----
+   Medido em 24/09/2026: em sessão sem gesto humano o play() resolve e mesmo assim
+   nada toca. Num telefone real o autoplay mudo passa — mas não dá para APOSTAR
+   nisso, então o quadro morto vira um botão. */
+.tocar{position:absolute;inset:0;z-index:3;display:none;place-items:center;
+  border:0;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tocar.on{display:grid}
+.tocar span{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--papel) 88%,transparent);color:var(--tinta);
+  box-shadow:var(--s3);font-size:20px;padding-left:4px;
+  transition:transform .3s var(--macio)}
+.tocar:hover span{transform:scale(1.06)}
+
 /* ---- placar ---- */
 .placar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
 .placar div{background:var(--papel-2);border:1px solid var(--linha);border-radius:var(--r2);
@@ -222,6 +235,7 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
              preload="auto" aria-hidden="true" tabindex="-1">
         <source src="midia/cena1.mp4" type="video/mp4">
       </video>
+      <button class="tocar" id="tocar-heroi" type="button" aria-label="Tocar a animação de abertura"><span>▶</span></button>
     </div>
     <div class="env heroi__in">
       <p class="local">Ribeirão Preto · SP</p>
@@ -407,7 +421,17 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
           fig.insertBefore(v, fig.firstChild);
           if(img) img.style.display = "none";
         }
-        if(!pouco) ligarVideo(v, src); 
+        if(!pouco){
+          ligarVideo(v, src);
+          if(!fig.querySelector(".tocar")){
+            var bt = document.createElement("button");
+            bt.type = "button"; bt.className = "tocar";
+            bt.setAttribute("aria-label","Tocar esta animação");
+            bt.innerHTML = "<span>\u25B6</span>";
+            fig.appendChild(bt);
+            planoB(v, bt);
+          }
+        }
       } else if(v && !v.paused){ v.pause(); }
     });
   }, {rootMargin:"120px 0px"});
@@ -429,6 +453,23 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
       document.addEventListener("visibilitychange", function(){ if(!document.hidden && hv.paused) insistir(); });
     }
   }
+
+  /* plano B: se em 1,2 s o vídeo não arrancou, o botão aparece. Um toque de
+     verdade dá a ativação que a política de autoplay exige. */
+  function planoB(video, botao){
+    if(!video || !botao) return;
+    setTimeout(function(){
+      if(video.paused || video.currentTime === 0) botao.classList.add("on");
+    }, 1200);
+    botao.addEventListener("click", function(){
+      var p = video.play();
+      if(p && p.then) p.then(function(){ botao.classList.remove("on"); })
+                       .catch(function(){});
+      else botao.classList.remove("on");
+    });
+    video.addEventListener("playing", function(){ botao.classList.remove("on"); });
+  }
+  if(hv && !pouco) planoB(hv, document.getElementById("tocar-heroi"));
 
   /* ---- galeria + lupa ---- */
   var lupa = document.getElementById("lupa"),
