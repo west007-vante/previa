@@ -229,7 +229,9 @@
     passo();
   }
 
-  if (raiz && window.fetch) {
+  // A cadeia só é montada DEPOIS da primeira pintura: os clipes são o peso da
+  // página e não podem entrar na conta do FCP. O texto e a foto pintam antes.
+  function comecarCadeia() {
     fetch('cadeia.json?v=7', { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (c) {
@@ -237,6 +239,11 @@
         else semCadeia();
       })
       .catch(semCadeia);
+  }
+  if (raiz && window.fetch) {
+    var solta = function () { setTimeout(comecarCadeia, 60); };
+    if (document.readyState === 'complete') solta();
+    else window.addEventListener('load', solta, { once: true });
   } else { semCadeia(); }
 
   // se a cadeia não carregar, o site continua: o pouso vira o topo da página
