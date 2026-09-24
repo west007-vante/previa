@@ -90,7 +90,8 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
    nisso, então o quadro morto vira um botão. */
 .tocar{position:absolute;inset:0;z-index:3;display:none;place-items:center;
   border:0;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.tocar.on{display:grid}
+.tocar.on{display:grid;animation:tocar-entra .35s var(--macio) .9s both}
+@keyframes tocar-entra{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
 .tocar span{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;
   background:color-mix(in srgb,var(--papel) 88%,transparent);color:var(--tinta);
   box-shadow:var(--s3);font-size:20px;padding-left:4px;
@@ -458,9 +459,10 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
      verdade dá a ativação que a política de autoplay exige. */
   function planoB(video, botao){
     if(!video || !botao) return;
-    setTimeout(function(){
-      if(video.paused || video.currentTime === 0) botao.classList.add("on");
-    }, 1200);
+    /* nasce ligado de proposito: estado nao pode depender de cronometro.
+       Se o autoplay pegar, o evento `playing` apaga o botao em poucos ms.
+       A APARENCIA e que atrasa, pelo CSS, para nao piscar. */
+    botao.classList.add("on");
     botao.addEventListener("click", function(){
       var p = video.play();
       if(p && p.then) p.then(function(){ botao.classList.remove("on"); })
