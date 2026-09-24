@@ -25,6 +25,15 @@
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --gutter:clamp(20px,5vw,72px);
   --quique:cubic-bezier(.22,.61,.36,1);
+  /* Canto e profundidade — ordem do dono em 24/09/2026 no gate visual.
+     Sobrescreve a proibição nº 4 do NORTE-DE-DESIGN ("card arredondado
+     genérico em grade"). Raio generoso e consistente, sombra difusa em
+     camadas: profundidade, não contorno. */
+  --raio-g:26px; --raio-m:18px; --raio-p:12px;
+  --sombra-1:0 1px 2px rgba(26,23,19,.05), 0 4px 12px rgba(26,23,19,.05);
+  --sombra-2:0 2px 6px rgba(26,23,19,.06), 0 14px 34px rgba(26,23,19,.09);
+  --sombra-3:0 6px 18px rgba(26,23,19,.09), 0 34px 70px rgba(26,23,19,.16);
+  --macio:cubic-bezier(.16,.84,.34,1);   /* saída longa, à Apple */
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-tema="claro"]){
@@ -32,6 +41,9 @@
     --tinta:#F0EBE3; --tinta-suave:#A79C8D;
     --acento:#C98B5E; --acento-claro:#C98B5E;
     --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F;
+    --sombra-1:0 1px 2px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.28);
+    --sombra-2:0 2px 6px rgba(0,0,0,.34), 0 14px 34px rgba(0,0,0,.4);
+    --sombra-3:0 6px 18px rgba(0,0,0,.4), 0 34px 70px rgba(0,0,0,.5);
   }
 }
 :root[data-tema="escuro"]{
@@ -39,6 +51,9 @@
   --tinta:#F0EBE3; --tinta-suave:#A79C8D;
   --acento:#C98B5E; --acento-claro:#C98B5E;
   --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F;
+    --sombra-1:0 1px 2px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.28);
+    --sombra-2:0 2px 6px rgba(0,0,0,.34), 0 14px 34px rgba(0,0,0,.4);
+    --sombra-3:0 6px 18px rgba(0,0,0,.4), 0 34px 70px rgba(0,0,0,.5);
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -266,15 +281,15 @@ main{position:relative;z-index:300}
 .corpo{position:relative;background:var(--papel)}
 
 /* ---------- POUSO ---------- */
-.pouso{position:relative;min-height:190vh;background:transparent}
+.pouso{position:relative;min-height:148vh;background:transparent}
 /* o véu faz a sala virar página: transparente em cima, papel embaixo.
    É rolagem pura — nenhum listener, nada para dessincronizar. */
 .pouso__veu{position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(to bottom,
     transparent 0%,
-    transparent 34%,
-    color-mix(in srgb,var(--papel) 55%,transparent) 52%,
-    var(--papel) 74%,
+    transparent 26%,
+    color-mix(in srgb,var(--papel) 55%,transparent) 46%,
+    var(--papel) 70%,
     var(--papel) 100%)}
 .pouso__in{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;
            padding-block:clamp(70px,12vh,140px) clamp(40px,8vh,90px)}
@@ -293,7 +308,7 @@ main{position:relative;z-index:300}
   font-size:clamp(2.5rem,6.6vw,4.3rem);margin:.42em 0 0;text-wrap:balance}
 .pouso__copy h1 em{font-style:normal;display:block;color:var(--acento)}
 @media(max-width:899px){
-  .pouso{min-height:180vh}
+  .pouso{min-height:152vh}
   .pouso__in{align-items:flex-end;padding-block:clamp(90px,16vh,160px) clamp(28px,6vh,60px)}
   .pouso__copy::before{inset:-20px -18px;
     background:linear-gradient(to top,
@@ -365,3 +380,96 @@ main{position:relative;z-index:300}
               color:var(--tinta-suave);white-space:nowrap}
 .galeria{grid-template-columns:repeat(auto-fill,minmax(clamp(140px,22vw,240px),1fr))}
 .galeria img{aspect-ratio:4/5}
+
+/* ===========================================================================
+   GATE VISUAL 24/09/2026 — ordem do dono: arredondar tudo, dar sombra e
+   profundidade, e um acabamento "bem Apple". Transição longa e macia
+   (--macio), profundidade em camadas, um gesto por vez.
+   NOTA: sobrescreve a proibição nº 4 do NORTE-DE-DESIGN. Registrado.
+   =========================================================================== */
+
+/* --- botões --- */
+.zap{border-radius:var(--raio-p);box-shadow:var(--sombra-2);
+     transition:transform .42s var(--macio),box-shadow .42s var(--macio)}
+.zap:hover{transform:translateY(-3px);box-shadow:var(--sombra-3)}
+.zap--peq{border-radius:10px}
+.zap--bloco{border-radius:var(--raio-m)}
+.tema{border-radius:999px;box-shadow:var(--sombra-1);
+      transition:transform .42s var(--macio),box-shadow .42s var(--macio)}
+.tema:hover{transform:translateY(-2px);box-shadow:var(--sombra-2)}
+
+/* --- blocos marcados --- */
+.campo{border-radius:var(--raio-m);box-shadow:var(--sombra-1)}
+
+/* --- painel do pouso: canto e profundidade, não tarja --- */
+.pouso__copy::before{border-radius:var(--raio-g);box-shadow:var(--sombra-2)}
+
+/* --- FOTO PRINCIPAL — sai do retângulo seco: canto generoso, esmaecida na
+       borda e com sombra difusa. A sombra vai no PAI via drop-shadow, porque
+       box-shadow não sobrevive à máscara. --- */
+.retrato{filter:drop-shadow(0 18px 44px rgba(26,23,19,.22));max-width:360px}
+.retrato img{border-radius:var(--raio-g);
+  -webkit-mask-image:radial-gradient(125% 115% at 50% 38%, #000 58%, rgba(0,0,0,.72) 82%, transparent 100%);
+          mask-image:radial-gradient(125% 115% at 50% 38%, #000 58%, rgba(0,0,0,.72) 82%, transparent 100%);
+  border:0}
+@media (prefers-color-scheme:dark){:root:not([data-tema="claro"]) .retrato{filter:drop-shadow(0 18px 44px rgba(0,0,0,.6))}}
+:root[data-tema="escuro"] .retrato{filter:drop-shadow(0 18px 44px rgba(0,0,0,.6))}
+
+/* --- galeria: clicável, arredondada, com profundidade --- */
+.galeria li{margin:0}
+.galeria button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;
+  border-radius:var(--raio-m);overflow:hidden;box-shadow:var(--sombra-1);
+  transition:transform .5s var(--macio),box-shadow .5s var(--macio)}
+.galeria button:hover{transform:translateY(-4px) scale(1.012);box-shadow:var(--sombra-3)}
+.galeria button:active{transform:translateY(-1px) scale(1.002)}
+.galeria img{border:0;border-radius:0;display:block}
+
+/* --- LUPA — o gesto que ele desenhou:
+       1) expande centralizada  2) desliza para o lado  3) a descrição entra --- */
+.lupa{position:fixed;inset:0;z-index:8000;display:grid;place-items:center}
+.lupa[hidden]{display:none}
+.lupa__fundo{position:absolute;inset:0;background:color-mix(in srgb,var(--papel) 78%,transparent);
+  -webkit-backdrop-filter:blur(22px) saturate(1.1);backdrop-filter:blur(22px) saturate(1.1);
+  opacity:0;transition:opacity .6s var(--macio)}
+.lupa.on .lupa__fundo{opacity:1}
+
+.lupa__fig{position:absolute;margin:0;top:50%;left:50%;width:min(62vw,540px);
+  transform:translate(-50%,-50%);transform-origin:center;
+  border-radius:var(--raio-g);overflow:hidden;box-shadow:var(--sombra-3);
+  transition:left 1s var(--macio),width 1s var(--macio),transform .9s var(--macio),opacity .3s linear}
+.lupa__fig img{display:block;width:100%;height:auto}
+/* fase 2: desliza para a esquerda e abre espaço para o texto */
+.lupa.aberto .lupa__fig{left:29%;width:min(42vw,420px)}
+
+.lupa__txt{position:absolute;top:50%;left:58%;width:min(34vw,420px);transform:translateY(-50%);
+  opacity:0;pointer-events:none;
+  transition:opacity .8s var(--macio) .15s,transform .8s var(--macio) .15s}
+.lupa.aberto .lupa__txt{opacity:1;pointer-events:auto}
+.lupa__txt h3{font-family:var(--display);font-weight:600;letter-spacing:-.03em;line-height:1.1;
+  font-size:clamp(1.3rem,2.4vw,1.85rem);margin:.3em 0 .6em}
+.lupa__txt p{margin:0 0 .9em;font-size:.98rem;line-height:1.62;color:var(--tinta-suave);max-width:46ch}
+.lupa__quando,.lupa__fonte{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta-suave)}
+.lupa__fonte{margin-top:16px}
+.lupa__x{position:absolute;top:clamp(14px,3vw,28px);right:clamp(14px,3vw,28px);
+  width:46px;height:46px;border-radius:999px;border:1px solid var(--linha-forte);
+  background:color-mix(in srgb,var(--papel) 82%,transparent);color:var(--tinta);
+  font:300 26px/1 var(--corpo);cursor:pointer;box-shadow:var(--sombra-1);
+  transition:transform .4s var(--macio),box-shadow .4s var(--macio)}
+.lupa__x:hover{transform:scale(1.08);box-shadow:var(--sombra-2)}
+
+@media(max-width:899px){
+  .lupa__fig{width:min(86vw,460px);top:34%}
+  .lupa.aberto .lupa__fig{left:50%;width:min(74vw,380px);top:30%}
+  .lupa__txt{left:50%;top:auto;bottom:clamp(18px,5vh,44px);width:min(90vw,520px);
+             transform:translateX(-50%);max-height:38vh;overflow:auto}
+  .lupa.aberto .lupa__txt{transform:translateX(-50%)}
+}
+
+/* --- a seção da clínica ganha o mesmo tratamento de profundidade --- */
+.clinica .ficha li{border-bottom-color:var(--linha)}
+
+@media (prefers-reduced-motion:reduce){
+  .lupa__fundo,.lupa__fig,.lupa__txt{transition:none!important}
+  .galeria button{transition:none!important}
+}

@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="estilo.css?v=13" />
+<link rel="stylesheet" href="estilo.css?v=15" />
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -198,10 +198,40 @@
   </div>
 </section>
 
-<!-- =============== 04 · O QUE NÃO FAZ — pedido explícito do Davi =============== -->
+<!-- =============== 04 · A CLÍNICA — Bella Lux =============== -->
+<section class="secao env clinica" id="clinica">
+  <div class="secao__grade">
+    <p class="secao__rot"><b>04</b> A clínica</p>
+    <div>
+      <h2 class="re">Ela atende na Bella Lux.</h2>
+      <p class="lede re" style="--d:100ms">Quem procura o nome dela acaba chegando à clínica onde ela trabalha — e vale saber qual é antes de marcar. Este é o nome que ela mesma assina na bio e marca nas publicações.</p>
+
+      <ul class="ficha re" style="--d:200ms">
+        <li><b>Clínica</b><span>Bella Lux Odontologia Estética</span></li>
+        <li><b>No perfil dela</b><span>Assinada na bio, ao lado do registro profissional</span></li>
+        <li><b>Nas publicações</b><span>Marcada em 12 das 40 publicações mais recentes</span></li>
+        <li><b>Onde</b><span>Jardim Califórnia · Ribeirão Preto/SP</span></li>
+      </ul>
+      <p class="fonte re" style="--d:300ms">Bio e publicações de
+        <a href="https://www.instagram.com/drakatiamiyoshi" target="_blank" rel="noopener noreferrer">@drakatiamiyoshi</a>,
+        lidas em 24/09/2026. A clínica é <b>@bellaluxodontologiaestetica</b>.</p>
+
+      <!-- TEXTO REAL: a clínica e a equipe. O material que chegou traz a Bella Lux
+           só como marcação (@ e hashtag) — não traz descrição da estrutura, nem
+           quem é a equipe, nem quantos profissionais. Isso não se supõe.
+           Para preencher: raspar o perfil @bellaluxodontologiaestetica. -->
+      <div class="campo re" style="--d:400ms">
+        <span class="campo__r">Falta confirmar com ela</span>
+        <p>O que é a clínica, quem forma a equipe e como é a estrutura. O material público dela cita a Bella Lux, mas não descreve nada disso — e estrutura de clínica não se inventa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 05 · O QUE NÃO FAZ — pedido explícito do Davi =============== -->
 <section class="secao env nao" id="nao">
   <div class="secao__grade">
-    <p class="secao__rot"><b>04</b> O que não faz</p>
+    <p class="secao__rot"><b>05</b> O que não faz</p>
     <div>
       <h2 class="re">O exagero. É o que ela recusa, e ela repete isso há anos.</h2>
       <p class="lede re" style="--d:100ms">Em procedimento estético, o profissional que recusa vale mais do que o que aceita tudo. Não escrevemos esta posição: ela está dita, nas palavras dela, em publicação atrás de publicação.</p>
@@ -226,10 +256,10 @@
   </div>
 </section>
 
-<!-- =============== 05 · ONDE FICA =============== -->
+<!-- =============== 06 · ONDE FICA =============== -->
 <section class="secao env" id="onde">
   <div class="secao__grade">
-    <p class="secao__rot"><b>05</b> Onde fica</p>
+    <p class="secao__rot"><b>06</b> Onde fica</p>
     <div>
       <h2 class="re">Jardim Califórnia, Ribeirão Preto.</h2>
       <p class="end re" style="--d:100ms">Av. Braz Olaia Acosta, 727 — Sala&nbsp;108</p>
@@ -253,10 +283,10 @@
   </div>
 </section>
 
-<!-- =============== 06 · O FECHO — um caminho só =============== -->
+<!-- =============== 07 · O FECHO — um caminho só =============== -->
 <section class="secao fecho" id="falar">
   <div class="env secao__grade">
-    <p class="secao__rot"><b>06</b> Falar</p>
+    <p class="secao__rot"><b>07</b> Falar</p>
     <div>
       <h2 class="re">Uma conversa antes de qualquer decisão.</h2>
       <p class="lede re" style="--d:100ms">Não há formulário nesta página. O botão abre o WhatsApp do consultório com a mensagem já escrita — é o mesmo destino em todos os botões daqui.</p>
@@ -286,6 +316,19 @@
   </div>
 </footer>
 
+<!-- lupa: a imagem expande centralizada e então desliza, abrindo a descrição -->
+<div class="lupa" id="lupa" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <div class="lupa__fundo" data-fechar></div>
+  <figure class="lupa__fig" id="lupa-fig"><img id="lupa-img" alt="" /></figure>
+  <div class="lupa__txt" id="lupa-txt">
+    <p class="lupa__quando" id="lupa-quando"></p>
+    <h3 id="lupa-titulo"></h3>
+    <div id="lupa-corpo"></div>
+    <p class="lupa__fonte" id="lupa-fonte"></p>
+  </div>
+  <button class="lupa__x" id="lupa-x" type="button" aria-label="Fechar">&times;</button>
+</div>
+
 <p class="aviso" id="aviso">Ambiente recriado — não é foto do consultório</p>
 
 <div class="wm" aria-hidden="true"><div class="wm__t"></div></div>
@@ -295,6 +338,6 @@
 </defs></svg>
 
 <script src="scrub-engine.js?v=7" defer></script>
-<script src="motion.js?v=13" defer></script>
+<script src="motion.js?v=15" defer></script>
 </body>
 </html>

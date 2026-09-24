@@ -104,11 +104,13 @@
         var fotos = (j && j.fotos) || [];
         // sem fotos, some também a legenda de fonte — nada de frase órfã
         if (!fotos.length) { if (fonteGal) fonteGal.style.display = 'none'; return; }
-        grade.innerHTML = fotos.map(function (f) {
-          var alt = (f.alt || 'Foto do consultório').replace(/"/g, '&quot;');
-          return '<li><img src="midia/galeria/' + encodeURIComponent(f.arq) + '?v=1" alt="' + alt +
-                 '" width="' + (f.w || 1200) + '" height="' + (f.h || 900) + '" loading="lazy" decoding="async"></li>';
+        grade.innerHTML = fotos.map(function (f, i) {
+          var alt = (f.alt || 'Foto da Dra. Katia Miyoshi').replace(/"/g, '&quot;');
+          return '<li><button type="button" data-i="' + i + '" aria-label="Ampliar: ' + alt + '">' +
+                 '<img src="midia/galeria/' + encodeURIComponent(f.arq) + '?v=1" alt="' + alt +
+                 '" width="' + (f.w || 1200) + '" height="' + (f.h || 900) + '" loading="lazy" decoding="async"></button></li>';
         }).join('');
+        ligarLupa(fotos);
         grade.classList.remove('galeria--vazia');
       })
       .catch(function () { if (fonteGal) fonteGal.style.display = 'none'; });
@@ -166,9 +168,18 @@
     var swRoot = raiz.querySelector('.sw-root') || raiz;
     var pedido = false, carregouPalco = false;
 
+    var corpoPuxado = 0;
     function passo() {
       pedido = false;
       var vh = window.innerHeight;
+      // A pista é `totalW*vh + vh`. Essa sobra de 1 vh era tela parada — o dono
+      // leu como travamento. Puxo o conteúdo para cima exatamente 1 vh: a
+      // última cena entrega direto no pouso, sem respiro.
+      if (corpoPuxado !== vh) {
+        corpoPuxado = vh;
+        var m = document.querySelector('main');
+        if (m) m.style.marginTop = (-vh) + 'px';
+      }
       var y = window.scrollY || window.pageYOffset;
       // ATENÇÃO: a pista do motor é `totalW*vh + vh` — ele guarda 1 vh de
       // sobra no fim "so the last flight completes". Os SEGMENTOS acabam 1 vh
@@ -189,9 +200,9 @@
       // a câmera parou: a legenda da cena sai devagar, sobrando a sala parada.
       // É o vão de respiro que o +1 vh da pista virou — a desaceleração do
       // clipe 3 entregue ao CSS, como pede o DIRECAO.md.
-      swRoot.classList.toggle('quieto', y > fimCadeia);
-      // depois disso o motor não tem mais nada a fazer na tela
-      swRoot.classList.toggle('fim', y > fimCadeia + 0.9 * vh);
+      // a legenda sai enquanto o palco entra: um gesto só, sem pausa
+      swRoot.classList.toggle('quieto', p > 0.28);
+      swRoot.classList.toggle('fim', y > fimCadeia + 0.25 * vh);
 
       // o palco só precisa existir enquanto o véu do pouso não fechou.
       // ATENÇÃO: offsetTop do #pouso é relativo ao <main> (position:relative),
@@ -200,12 +211,12 @@
       var fimPouso = fimCadeia + 1.5 * vh;
       if (pouso) {
         var topoAbs = pouso.getBoundingClientRect().top + y;
-        fimPouso = topoAbs + pouso.offsetHeight * 0.74;   // 74% = onde o véu vira papel sólido
+        fimPouso = topoAbs + pouso.offsetHeight * 0.70;   // 70% = onde o véu vira papel sólido
       }
       if (y > fimPouso) { palco.classList.remove('on'); } else if (carregouPalco) { palco.classList.add('on'); }
 
       // a marca entra quando o nome pousa
-      if (topo) topo.classList.toggle('oculto', y < fimCadeia + 0.6 * vh);
+      if (topo) topo.classList.toggle('oculto', y < fimCadeia - 0.1 * vh);
 
       // o aviso da trava vale enquanto houver imagem gerada na tela
       if (aviso) aviso.classList.toggle('off', y > fimPouso);
@@ -235,5 +246,91 @@
     if (topo) topo.classList.remove('oculto');
     var pouso = document.getElementById('pouso');
     if (pouso) { pouso.style.minHeight = '0'; pouso.classList.add('sem-cadeia'); }
+  }
+
+  /* =========================================================================
+     LUPA — o gesto que o dono desenhou, nesta ordem:
+       1. clica na imagem
+       2. ela expande CENTRALIZADA (FLIP a partir da miniatura, ~0,9 s)
+       3. desliza para o lado, abrindo espaço
+       4. a descrição entra ao lado — a legenda REAL da publicação
+     Soma ~2 s, como ele pediu. Fecha por clique fora, Esc e botão; o foco
+     fica preso enquanto está aberta. Sob prefers-reduced-motion vai direto
+     para o estado final, sem percurso.
+     ========================================================================= */
+  function ligarLupa(fotos) {
+    var lupa = document.getElementById('lupa');
+    if (!lupa) return;
+    var fig = document.getElementById('lupa-fig'), img = document.getElementById('lupa-img');
+    var elQuando = document.getElementById('lupa-quando'), elTit = document.getElementById('lupa-titulo');
+    var elCorpo = document.getElementById('lupa-corpo'), elFonte = document.getElementById('lupa-fonte');
+    var fechar = document.getElementById('lupa-x');
+    var devolverFoco = null, t1 = null, t2 = null;
+
+    function abrir(i, origem) {
+      var f = fotos[i]; if (!f) return;
+      devolverFoco = origem;
+      img.src = 'midia/galeria/' + encodeURIComponent(f.arq) + '?v=1';
+      img.alt = f.alt || '';
+      elQuando.textContent = f.quando || '';
+      elTit.textContent = f.titulo || '';
+      elCorpo.innerHTML = (f.texto || []).map(function (t) {
+        return '<p>' + String(t).replace(/[&<>]/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]; }) + '</p>';
+      }).join('');
+      elFonte.textContent = f.fonte || '';
+      lupa.hidden = false;
+      document.body.style.overflow = 'hidden';
+
+      if (pouco) { lupa.classList.add('on', 'aberto'); fechar.focus(); return; }
+
+      // FLIP: parte exatamente de onde a miniatura está
+      var mini = origem && origem.getBoundingClientRect();
+      lupa.classList.add('on');
+      requestAnimationFrame(function () {
+        var alvo = fig.getBoundingClientRect();
+        if (mini && alvo.width) {
+          var ex = mini.width / alvo.width, ey = mini.height / alvo.height;
+          var dx = (mini.left + mini.width / 2) - (alvo.left + alvo.width / 2);
+          var dy = (mini.top + mini.height / 2) - (alvo.top + alvo.height / 2);
+          fig.style.transition = 'none';
+          fig.style.transform = 'translate(-50%,-50%) translate(' + dx + 'px,' + dy + 'px) scale(' + ex + ',' + ey + ')';
+          fig.getBoundingClientRect();           // força o reflow
+          fig.style.transition = '';
+          fig.style.transform = 'translate(-50%,-50%)';
+        }
+        // fase 2 começa quando a expansão termina
+        t1 = setTimeout(function () { lupa.classList.add('aberto'); }, 900);
+        t2 = setTimeout(function () { fechar.focus(); }, 950);
+      });
+    }
+
+    function fecharLupa() {
+      clearTimeout(t1); clearTimeout(t2);
+      lupa.classList.remove('on', 'aberto');
+      document.body.style.overflow = '';
+      var esconde = function () { lupa.hidden = true; fig.style.transform = ''; };
+      if (pouco) esconde(); else setTimeout(esconde, 420);
+      if (devolverFoco) { try { devolverFoco.focus(); } catch (e) {} }
+    }
+
+    grade.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('button[data-i]') : null;
+      if (b) abrir(parseInt(b.getAttribute('data-i'), 10), b);
+    });
+    fechar.addEventListener('click', fecharLupa);
+    lupa.addEventListener('click', function (e) {
+      if (e.target.hasAttribute && e.target.hasAttribute('data-fechar')) fecharLupa();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (lupa.hidden) return;
+      if (e.key === 'Escape') { fecharLupa(); return; }
+      if (e.key === 'Tab') {                      // foco preso no diálogo
+        var f = lupa.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+        if (!f.length) return;
+        var pri = f[0], ult = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === pri) { e.preventDefault(); ult.focus(); }
+        else if (!e.shiftKey && document.activeElement === ult) { e.preventDefault(); pri.focus(); }
+      }
+    });
   }
 })();
