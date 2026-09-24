@@ -71,7 +71,8 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
 /* ---- herói ---- */
 .heroi{position:relative;min-height:88svh;display:flex;align-items:flex-end;
   overflow:hidden;isolation:isolate}
-.heroi__mid{position:absolute;inset:0;z-index:-2}
+.heroi__mid{position:absolute;inset:0;z-index:-2;
+  background:var(--papel) url('midia/cena1_poster.jpg') center/cover no-repeat}
 .heroi__mid img,.heroi__mid video{width:100%;height:100%;object-fit:cover}
 .heroi__mid::after{content:"";position:absolute;inset:0;
   background:linear-gradient(to top,var(--papel) 2%,color-mix(in srgb,var(--papel) 72%,transparent) 32%,transparent 66%)}
@@ -164,7 +165,7 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
 
 /* ---- ilha de movimento ---- */
 .ilha{position:relative;border-radius:var(--r1);overflow:hidden;box-shadow:var(--s2);
-  background:var(--papel-2);margin-top:8px}
+  background:var(--papel-2) center/cover no-repeat;margin-top:8px}
 .ilha video,.ilha img{width:100%;aspect-ratio:16/10;object-fit:cover}
 .ilha figcaption{position:absolute;left:10px;bottom:10px;z-index:2;
   background:color-mix(in srgb,var(--papel) 90%,transparent);color:var(--tinta-2);
@@ -303,7 +304,7 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
         <li><b>Microagulhamento e PDRN</b><span>Citados para qualidade de pele.</span></li>
         <li><b>Perfiloplastia</b><span>Ajuste de perfil e harmonia do rosto.</span></li>
       </ul>
-      <figure class="ilha re" style="margin:22px 0 0" data-clipe="midia/cena2.mp4">
+      <figure class="ilha re" style="margin:22px 0 0;background-image:url(midia/cena2_poster.jpg)" data-clipe="midia/cena2.mp4">
         <img src="midia/cena2_poster.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Ambiente clínico recriado, em luz baixa">
         <figcaption>Ambiente recriado — não é foto do consultório</figcaption>
       </figure>
