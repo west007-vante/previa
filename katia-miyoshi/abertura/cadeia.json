@@ -1,0 +1,16 @@
+{
+  "_leia_me": "Cadeia curta de abertura (3 cenas). ENQUANTO clip/clipMobile forem null o motor usa so o poster (still) e faz travessia por dissolucao — e exatamente o estado de hoje, 24/09/2026, porque a Station nao entregou clipe nenhum.",
+  "_para_ligar_o_video": "copie os arquivos de ~/steve-site/work/station/katia/clipes/ para esta pasta e preencha clip/clipMobile abaixo. Nada mais muda.",
+  "sections": [
+    { "id": "proporcao", "label": "Proporção", "still": "cena-1.svg", "clip": null, "clipMobile": null,
+      "eyebrow": "Ribeirão Preto · SP", "title": "Dra. Katia Miyoshi",
+      "body": "Odontologia e harmonização facial em consultório no Jardim Califórnia." },
+    { "id": "consultorio", "label": "Consultório", "still": "cena-2.svg", "clip": null, "clipMobile": null,
+      "eyebrow": "02", "title": "226 avaliações, média 5,0",
+      "body": "Avaliação pública do perfil dela no Google, lida em 24/09/2026." },
+    { "id": "conversa", "label": "Conversa", "still": "cena-3.svg", "clip": null, "clipMobile": null,
+      "eyebrow": "03", "title": "Uma conversa antes de decidir",
+      "body": "Um caminho só: o WhatsApp do consultório." }
+  ],
+  "connectors": [null, null]
+}

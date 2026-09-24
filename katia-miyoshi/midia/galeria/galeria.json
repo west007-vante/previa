@@ -1,0 +1,5 @@
+{
+  "_leia_me": "Encaixe das FOTOS REAIS do perfil dela (119 no Google). Solte os arquivos nesta pasta com nome previsivel foto-01.jpg, foto-02.jpg ... e liste aqui. w/h sao a dimensao REAL do arquivo (declarada no HTML para nao pular layout). Lista vazia = a pagina mostra o espaco marcado, nao quebra.",
+  "_proibido": "nenhum rosto de paciente, nenhum antes-e-depois. So consultorio, equipe, fachada, instrumental.",
+  "fotos": []
+}
