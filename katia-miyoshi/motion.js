@@ -187,9 +187,15 @@
       swRoot.classList.toggle('fim', fora);
       if (fora && carregouPalco === false) { carregouPalco = true; palcoImg.src = REPOUSO; palco.classList.add('on'); }
 
-      // o palco só precisa existir enquanto o véu do pouso não fechou
+      // o palco só precisa existir enquanto o véu do pouso não fechou.
+      // ATENÇÃO: offsetTop do #pouso é relativo ao <main> (position:relative),
+      // não à página — dava 0 e derrubava o palco ainda dentro da cadeia.
       var pouso = document.getElementById('pouso');
-      var fimPouso = pouso ? pouso.offsetTop + pouso.offsetHeight * 0.78 : fimCadeia + 1.5 * vh;
+      var fimPouso = fimCadeia + 1.5 * vh;
+      if (pouso) {
+        var topoAbs = pouso.getBoundingClientRect().top + y;
+        fimPouso = topoAbs + pouso.offsetHeight * 0.78;
+      }
       if (y > fimPouso) { palco.classList.remove('on'); } else if (carregouPalco) { palco.classList.add('on'); }
 
       // a marca entra quando o nome pousa
