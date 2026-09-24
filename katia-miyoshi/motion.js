@@ -269,6 +269,8 @@
 
     function abrir(i, origem) {
       var f = fotos[i]; if (!f) return;
+      clearTimeout(t1); clearTimeout(t2);
+      lupa.classList.remove('aberto');
       devolverFoco = origem;
       img.src = 'midia/galeria/' + encodeURIComponent(f.arq) + '?v=1';
       img.alt = f.alt || '';
@@ -286,6 +288,12 @@
       // FLIP: parte exatamente de onde a miniatura está
       var mini = origem && origem.getBoundingClientRect();
       lupa.classList.add('on');
+      // Os tempos NÃO ficam dentro do rAF: em aba automatizada/segundo plano o
+      // rAF pode não disparar e a fase 2 (a descrição) nunca abria — o QA pegou
+      // isso como "controle clicado e nada mudou". O percurso visual é enfeite;
+      // o estado final é obrigação.
+      t1 = setTimeout(function () { lupa.classList.add('aberto'); }, 900);
+      t2 = setTimeout(function () { try { fechar.focus(); } catch (e) {} }, 950);
       requestAnimationFrame(function () {
         var alvo = fig.getBoundingClientRect();
         if (mini && alvo.width) {
@@ -298,9 +306,6 @@
           fig.style.transition = '';
           fig.style.transform = 'translate(-50%,-50%)';
         }
-        // fase 2 começa quando a expansão termina
-        t1 = setTimeout(function () { lupa.classList.add('aberto'); }, 900);
-        t2 = setTimeout(function () { fechar.focus(); }, 950);
       });
     }
 

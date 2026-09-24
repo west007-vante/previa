@@ -14,7 +14,7 @@
 
 :root{
   --papel:#F6F2EC; --papel-2:#EFE9E0; --papel-3:#E7DFD2;
-  --tinta:#1A1713; --tinta-suave:#6E655A;
+  --tinta:#1A1713; --tinta-suave:#5A5248;   /* 6,92:1 sobre o papel, medido */
   --acento:#8A5638;        /* texto/botão — 5,99:1 sobre branco */
   --acento-claro:#A2684A;  /* só traço e ornamento */
   --linha:rgba(26,23,19,.14);
@@ -38,7 +38,7 @@
 @media (prefers-color-scheme:dark){
   :root:not([data-tema="claro"]){
     --papel:#14120F; --papel-2:#1D1A16; --papel-3:#26221C;
-    --tinta:#F0EBE3; --tinta-suave:#A79C8D;
+    --tinta:#F0EBE3; --tinta-suave:#BDB2A1;   /* 8,75:1 sobre o papel escuro */
     --acento:#C98B5E; --acento-claro:#C98B5E;
     --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F;
     --sombra-1:0 1px 2px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.28);
@@ -48,7 +48,7 @@
 }
 :root[data-tema="escuro"]{
   --papel:#14120F; --papel-2:#1D1A16; --papel-3:#26221C;
-  --tinta:#F0EBE3; --tinta-suave:#A79C8D;
+  --tinta:#F0EBE3; --tinta-suave:#BDB2A1;   /* 8,75:1 sobre o papel escuro */
   --acento:#C98B5E; --acento-claro:#C98B5E;
   --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F;
     --sombra-1:0 1px 2px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.28);
