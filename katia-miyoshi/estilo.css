@@ -477,3 +477,10 @@ main{position:relative;z-index:300}
   .lupa__fundo,.lupa__fig,.lupa__txt{transition:none!important}
   .galeria button{transition:none!important}
 }
+
+/* As linhas de fonte não desaparecem para reaparecer: texto em meio-fade é
+   texto de baixo contraste enquanto dura. Entram só por deslocamento.
+   Medido: acento #8A5638 sobre papel = 5,7:1 (claro) e #C98B5E sobre
+   #14120F = 6,46:1 (escuro). */
+.fonte.re{opacity:1}
+.fonte.re:not(.vis){transform:translateY(10px)}
