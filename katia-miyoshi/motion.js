@@ -281,6 +281,8 @@
       }).join('');
       elFonte.textContent = f.fonte || '';
       lupa.hidden = false;
+      document.documentElement.setAttribute('data-lupa', '1');
+      if (origem) origem.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
 
       if (pouco) { lupa.classList.add('on', 'aberto'); fechar.focus(); return; }
@@ -312,6 +314,8 @@
     function fecharLupa() {
       clearTimeout(t1); clearTimeout(t2);
       lupa.classList.remove('on', 'aberto');
+      document.documentElement.removeAttribute('data-lupa');
+      if (devolverFoco) devolverFoco.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
       var esconde = function () { lupa.hidden = true; fig.style.transform = ''; };
       if (pouco) esconde(); else setTimeout(esconde, 420);

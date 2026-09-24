@@ -166,7 +166,7 @@ a{color:inherit}
 .dados+.fonte,.placar+.fonte{margin-top:clamp(18px,2.4vw,26px)}
 .fonte{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--tinta-suave);
        margin-top:clamp(20px,2.6vw,28px);line-height:1.7}
-.fonte a{color:var(--acento);text-underline-offset:3px}
+.fonte a{color:var(--acento);text-underline-offset:3px;text-decoration-thickness:1px;font-weight:600}
 
 /* endereço */
 .end{font-family:var(--display);font-weight:600;font-size:clamp(1.22rem,3vw,1.62rem);
@@ -434,7 +434,7 @@ main{position:relative;z-index:300}
 .lupa[hidden]{display:none}
 .lupa__fundo{position:absolute;inset:0;background:color-mix(in srgb,var(--papel) 94%,transparent);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-  opacity:0;transition:opacity .6s var(--macio)}
+  opacity:0;transition:opacity .28s var(--macio)}
 .lupa.on .lupa__fundo{opacity:1}
 
 .lupa__fig{position:absolute;margin:0;top:50%;left:50%;width:min(62vw,540px);
