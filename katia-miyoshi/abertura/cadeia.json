@@ -1,16 +1,44 @@
 {
-  "_leia_me": "Cadeia curta de abertura (3 cenas). ENQUANTO clip/clipMobile forem null o motor usa so o poster (still) e faz travessia por dissolucao — e exatamente o estado de hoje, 24/09/2026, porque a Station nao entregou clipe nenhum.",
-  "_para_ligar_o_video": "copie os arquivos de ~/steve-site/work/station/katia/clipes/ para esta pasta e preencha clip/clipMobile abaixo. Nada mais muda.",
+  "_estado_24_09_2026": "A Station entregou PARCIAL. cena1 = aprovada (laudo: aprovado=true, costura_ok=true) e esta ligada aqui. cena2 e cena3 NAO tem arquivo servivel.",
+  "_cena2": "laudo aprovado=true, mas o render aprovado (conector/cena2_wan22i2v_s7_p4.webm) nao existe mais; so sobrou reprovados/cena2_v1_k2antigo.webm, que o proprio portao marcou como nao-usar.",
+  "_cena3": "laudo aprovado=FALSE — derretendo=true, cor_salto_max 0.324 (as outras ~0.08), ssim_vizinho 0.374. Um v2 comecou 05:14:57 e o log ficou com 0 bytes: o agente morreu no meio.",
+  "_costura": "ENCAIXE.md da Station: as cenas emendam quadro a quadro (PSNR/SSIM medidos). Por isso crossfade=0 — qualquer dissolucao entre elas destroi a emenda.",
+  "_safari": "VP9/WebM nao e confiavel no Safari/iOS. O motor busca UM arquivo por cena, entao aqui vai o .mp4 (H.264). O .webm fica ao lado para quem quiser servir com <source>.",
+  "crossfade": 0,
   "sections": [
-    { "id": "proporcao", "label": "Proporção", "still": "cena-1.svg", "clip": null, "clipMobile": null,
-      "eyebrow": "Ribeirão Preto · SP", "title": "Dra. Katia Miyoshi",
-      "body": "Odontologia e harmonização facial em consultório no Jardim Califórnia." },
-    { "id": "consultorio", "label": "Consultório", "still": "cena-2.svg", "clip": null, "clipMobile": null,
-      "eyebrow": "02", "title": "226 avaliações, média 5,0",
-      "body": "Avaliação pública do perfil dela no Google, lida em 24/09/2026." },
-    { "id": "conversa", "label": "Conversa", "still": "cena-3.svg", "clip": null, "clipMobile": null,
-      "eyebrow": "03", "title": "Uma conversa antes de decidir",
-      "body": "Um caminho só: o WhatsApp do consultório." }
+    {
+      "id": "luz",
+      "label": "A luz",
+      "still": "cena1_poster.jpg",
+      "clip": "cena1.mp4",
+      "clipMobile": null,
+      "eyebrow": "Ribeirao Preto · SP",
+      "title": "Dra. Katia Miyoshi",
+      "body": "Odontologia e harmonizacao facial em consultorio no Jardim California."
+    },
+    {
+      "id": "vao",
+      "label": "O vao",
+      "still": "cena-2.svg",
+      "clip": null,
+      "clipMobile": null,
+      "eyebrow": "02",
+      "title": "226 avaliacoes, media 5,0",
+      "body": "Avaliacao publica do perfil dela no Google, lida em 24/09/2026."
+    },
+    {
+      "id": "conversa",
+      "label": "Conversa",
+      "still": "cena-3.svg",
+      "clip": null,
+      "clipMobile": null,
+      "eyebrow": "03",
+      "title": "Uma conversa antes de decidir",
+      "body": "Um caminho so: o WhatsApp do consultorio."
+    }
   ],
-  "connectors": [null, null]
+  "connectors": [
+    null,
+    null
+  ]
 }

@@ -50,6 +50,7 @@ fetch('cadeia.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(
     hint:'role para entrar',
     nav:true, atmosphere:true,
     diveScroll:1.2, connScroll:0.9,
+    crossfade:(c.crossfade!=null?c.crossfade:0.12),
     sections:secoes,
     connectors:(c.connectors||[]).filter(Boolean)
   });
