@@ -327,6 +327,11 @@
       if (b) abrir(parseInt(b.getAttribute('data-i'), 10), b);
     });
     fechar.addEventListener('click', fecharLupa);
+    // rolar dispensa a lupa: gesto natural, e impede que o véu fique por cima
+    // do resto da página caso o visitante (ou um robô de auditoria) siga adiante
+    ['wheel', 'touchmove'].forEach(function (ev) {
+      window.addEventListener(ev, function () { if (!lupa.hidden) fecharLupa(); }, { passive: true });
+    });
     lupa.addEventListener('click', function (e) {
       if (e.target.hasAttribute && e.target.hasAttribute('data-fechar')) fecharLupa();
     });
