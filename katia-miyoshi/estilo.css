@@ -243,7 +243,13 @@ a{color:inherit}
    casa já usa no `.pv-fim` das outras prévias.
    =========================================================================== */
 #abertura{position:relative;z-index:1}
-.sw-scrollbar{display:none!important}          /* mede só a cadeia: enganaria como barra de leitura */
+.sw-scrollbar{display:none!important}
+/* seedParticles() roda mesmo com atmosphere:false — e partícula sobre imagem
+   real é ruído. É clínica, não videogame. */
+.sw-particles{display:none!important}
+/* a legenda da cena sai devagar quando a câmera para */
+.sw-copylayer{transition:opacity .6s var(--quique)}
+.sw-root.quieto .sw-copylayer{opacity:0;pointer-events:none}          /* mede só a cadeia: enganaria como barra de leitura */
 
 /* palco: o último quadro da cena 3, fixo e com o MESMO enquadramento do motor
    (.sw-scene__still usa object-fit:cover / object-position:center 42%).

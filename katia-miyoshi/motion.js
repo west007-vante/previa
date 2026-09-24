@@ -170,10 +170,14 @@
       pedido = false;
       var vh = window.innerHeight;
       var y = window.scrollY || window.pageYOffset;
-      var fimCadeia = raiz.offsetHeight || (3.6 * vh);
+      // ATENÇÃO: a pista do motor é `totalW*vh + vh` — ele guarda 1 vh de
+      // sobra no fim "so the last flight completes". Os SEGMENTOS acabam 1 vh
+      // antes da altura da pista; usar offsetHeight direto deixava 1 vh de
+      // tela em branco (as cenas já em opacidade 0) no meio da travessia.
+      var fimCadeia = (raiz.offsetHeight || (4.6 * vh)) - vh;
 
-      // o palco entra no último quarto da cadeia, por baixo do vídeo
-      var p = (y - (fimCadeia - 0.55 * vh)) / (0.5 * vh);
+      // o palco entra por baixo do vídeo e chega a 1 exatamente no fim da cadeia
+      var p = (y - (fimCadeia - 0.5 * vh)) / (0.5 * vh);
       p = p < 0 ? 0 : (p > 1 ? 1 : p);
       if (p > 0 && !carregouPalco) {         // só baixa a imagem quando ela vai servir
         carregouPalco = true;
@@ -182,10 +186,12 @@
       }
       palco.style.opacity = pouco ? String(p > 0 ? 1 : 0) : String(p);
 
-      // passada a travessia o motor não tem mais nada a fazer na tela
-      var fora = y > fimCadeia + 0.35 * vh;
-      swRoot.classList.toggle('fim', fora);
-      if (fora && carregouPalco === false) { carregouPalco = true; palcoImg.src = REPOUSO; palco.classList.add('on'); }
+      // a câmera parou: a legenda da cena sai devagar, sobrando a sala parada.
+      // É o vão de respiro que o +1 vh da pista virou — a desaceleração do
+      // clipe 3 entregue ao CSS, como pede o DIRECAO.md.
+      swRoot.classList.toggle('quieto', y > fimCadeia);
+      // depois disso o motor não tem mais nada a fazer na tela
+      swRoot.classList.toggle('fim', y > fimCadeia + 0.9 * vh);
 
       // o palco só precisa existir enquanto o véu do pouso não fechou.
       // ATENÇÃO: offsetTop do #pouso é relativo ao <main> (position:relative),
@@ -199,7 +205,7 @@
       if (y > fimPouso) { palco.classList.remove('on'); } else if (carregouPalco) { palco.classList.add('on'); }
 
       // a marca entra quando o nome pousa
-      if (topo) topo.classList.toggle('oculto', y < fimCadeia - 0.25 * vh);
+      if (topo) topo.classList.toggle('oculto', y < fimCadeia + 0.6 * vh);
 
       // o aviso da trava vale enquanto houver imagem gerada na tela
       if (aviso) aviso.classList.toggle('off', y > fimPouso);
