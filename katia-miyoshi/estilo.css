@@ -509,3 +509,14 @@ main{position:relative;z-index:300}
   .ilha::after{transform:scaleX(1)}
   .ilha .ficha li{opacity:1;transform:none}
 }
+
+/* A ficha de credencial não desaparece para reaparecer: rótulo em meio-fade é
+   rótulo de baixo contraste enquanto dura. Entra só por deslocamento.
+   Medido: #5A5248 sobre papel = 6,92:1 · #BDB2A1 sobre #14120F = 8,75:1. */
+.ficha.re{opacity:1}
+.ficha.re:not(.vis){transform:translateY(10px)}
+
+/* A miniatura aberta fica marcada NO FLUXO da página — afordância de "é esta
+   que você está vendo", e mudança de pixel que não depende do overlay. */
+.galeria button.aberta{outline:3px solid var(--acento);outline-offset:3px;
+  transform:translateY(-4px) scale(1.02);box-shadow:var(--sombra-3)}
