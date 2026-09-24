@@ -433,7 +433,6 @@ main{position:relative;z-index:300}
 .lupa{position:fixed;inset:0;z-index:8000;display:grid;place-items:center}
 .lupa[hidden]{display:none}
 .lupa__fundo{position:absolute;inset:0;background:color-mix(in srgb,var(--papel) 94%,transparent);
-  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   opacity:0;transition:opacity .28s var(--macio)}
 .lupa.on .lupa__fundo{opacity:1}
 
