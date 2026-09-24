@@ -96,22 +96,22 @@
   /* ---- galeria das FOTOS REAIS ----
      Lê midia/galeria/galeria.json. Lista vazia = fica o espaço marcado.
      Cada foto declara w/h para a grade não pular quando as imagens chegarem. */
-  var grade = document.getElementById('galeria'), vazio = document.getElementById('galeria-vazia');
+  var grade = document.getElementById('galeria'), fonteGal = document.getElementById('galeria-fonte');
   if (grade && window.fetch) {
     fetch('midia/galeria/galeria.json', { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) {
         var fotos = (j && j.fotos) || [];
-        if (!fotos.length) return;
+        // sem fotos, some também a legenda de fonte — nada de frase órfã
+        if (!fotos.length) { if (fonteGal) fonteGal.style.display = 'none'; return; }
         grade.innerHTML = fotos.map(function (f) {
           var alt = (f.alt || 'Foto do consultório').replace(/"/g, '&quot;');
           return '<li><img src="midia/galeria/' + encodeURIComponent(f.arq) + '" alt="' + alt +
                  '" width="' + (f.w || 1200) + '" height="' + (f.h || 900) + '" loading="lazy" decoding="async"></li>';
         }).join('');
         grade.classList.remove('galeria--vazia');
-        if (vazio) vazio.style.display = 'none';
       })
-      .catch(function () { /* sem galeria: o espaço marcado continua na tela */ });
+      .catch(function () { if (fonteGal) fonteGal.style.display = 'none'; });
   }
 
   /* =========================================================================

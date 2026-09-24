@@ -1,5 +1,42 @@
 {
-  "_leia_me": "Encaixe das FOTOS REAIS do perfil dela (119 no Google). Solte os arquivos nesta pasta com nome previsivel foto-01.jpg, foto-02.jpg ... e liste aqui. w/h sao a dimensao REAL do arquivo (declarada no HTML para nao pular layout). Lista vazia = a pagina mostra o espaco marcado, nao quebra.",
-  "_proibido": "nenhum rosto de paciente, nenhum antes-e-depois. So consultorio, equipe, fachada, instrumental.",
-  "fotos": []
+  "_fonte": "Instagram publico @drakatiamiyoshi, lido em 24/09/2026. Uso autorizado pelo dono.",
+  "_trava": "Cada imagem foi aberta e olhada antes de entrar. Nenhuma traz paciente, rosto de paciente, antes-e-depois ou procedimento em pele de paciente. Todas sao a propria Dra. Katia; os paineis de objeto (bolsa, unhas, cabelo) nao tem rosto identificavel.",
+  "fotos": [
+    {
+      "arq": "foto-01.jpg",
+      "w": 720,
+      "h": 900,
+      "alt": "Dra. Katia Miyoshi em retrato de divulgação, com a frase “Seu rosto é seu cartão de visitas”"
+    },
+    {
+      "arq": "foto-02.jpg",
+      "w": 720,
+      "h": 900,
+      "alt": "Dra. Katia Miyoshi em retrato de divulgação da campanha “As pessoas olham primeiro para o seu rosto”"
+    },
+    {
+      "arq": "foto-03.jpg",
+      "w": 720,
+      "h": 900,
+      "alt": "Dra. Katia Miyoshi junto à janela, da mesma campanha"
+    },
+    {
+      "arq": "foto-04.jpg",
+      "w": 720,
+      "h": 900,
+      "alt": "Dra. Katia Miyoshi enquadrando o rosto com as mãos, da mesma campanha"
+    },
+    {
+      "arq": "foto-05.jpg",
+      "w": 720,
+      "h": 900,
+      "alt": "Dra. Katia Miyoshi de blazer branco, da mesma campanha"
+    },
+    {
+      "arq": "foto-06.jpg",
+      "w": 720,
+      "h": 900,
+      "alt": "Dra. Katia Miyoshi segurando uma xícara, em retrato de divulgação"
+    }
+  ]
 }

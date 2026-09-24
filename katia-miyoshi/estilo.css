@@ -333,3 +333,35 @@ main{position:relative;z-index:300}
 .pouso.sem-cadeia .pouso__veu{display:none}
 .pouso.sem-cadeia .pouso__in{min-height:0;padding-block:clamp(48px,8vw,104px) clamp(40px,6vw,76px)}
 .pouso.sem-cadeia .pouso__copy::before{display:none}
+
+/* ===========================================================================
+   MATERIAL REAL DELA — Instagram público @drakatiamiyoshi, 24/09/2026.
+   Servido do nosso servidor: as URLs da CDN do Instagram são assinadas e expiram.
+   =========================================================================== */
+.retrato{margin:clamp(24px,3vw,34px) 0 0;max-width:340px}
+.retrato img{width:100%;height:auto;display:block;border:1px solid var(--linha);background:var(--papel-3)}
+.retrato figcaption{margin-top:9px;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;
+                    text-transform:uppercase;color:var(--tinta-suave);line-height:1.6}
+
+/* ficha de credencial — filete e rótulo, nunca card arredondado */
+.ficha{list-style:none;margin:clamp(26px,3.4vw,38px) 0 0;padding:0;border-top:1px solid var(--linha)}
+.ficha li{border-bottom:1px solid var(--linha);padding:14px 0;display:grid;gap:4px 24px;
+          grid-template-columns:1fr;align-items:baseline}
+@media(min-width:680px){.ficha li{grid-template-columns:minmax(0,11rem) minmax(0,1fr)}}
+.ficha b{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--tinta-suave);font-weight:400}
+.ficha span{font-size:1.02rem}
+
+/* a voz dela — citação, não copy nossa */
+.fala{margin:clamp(26px,3.4vw,36px) 0 0;padding:0 0 0 clamp(18px,2.4vw,26px);
+      border-left:2px solid var(--acento)}
+.fala p{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.02em;
+        font-size:clamp(1.24rem,2.8vw,1.6rem);line-height:1.25;color:var(--tinta)}
+.fala cite{display:block;margin-top:10px;font-style:normal;font-family:var(--mono);font-size:.64rem;
+           letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave)}
+
+/* as datas nas frases da seção 04 */
+.nao .itens i{font-style:normal;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;
+              color:var(--tinta-suave);white-space:nowrap}
+.galeria{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.galeria img{aspect-ratio:4/5}

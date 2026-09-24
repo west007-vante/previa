@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="estilo.css?v=10" />
+<link rel="stylesheet" href="estilo.css?v=11" />
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -95,20 +95,39 @@
       <h2 class="re">Você vai saber de quem é a mão antes de marcar.</h2>
       <p class="lede re" style="--d:100ms">Procedimento no rosto é decisão cara e difícil de desfazer. Quem indica já confia; quem foi indicado precisa de onde apoiar a confiança. Esta página existe para isso.</p>
 
-      <!-- FOTO REAL: retrato da Dra. Katia (o perfil dela no Google tem 119 fotos).
-           Arquivo esperado: midia/retrato.jpg — declarar width/height no <img>.
-           PROIBIDO: foto de paciente, antes-e-depois. -->
-      <div class="campo campo--retrato re" style="--d:200ms">
-        <span class="campo__r">Foto real · retrato</span>
-        <p>Retrato da Dra. Katia, do próprio perfil dela. Não colocamos imagem de banco nem rosto gerado.</p>
-      </div>
+      <!-- FOTO REAL — Instagram público @drakatiamiyoshi, lido em 24/09/2026.
+           Retrato de estúdio, só ela. Conferida imagem a imagem antes de entrar:
+           sem paciente, sem antes-e-depois, sem procedimento em pele. -->
+      <figure class="retrato re" style="--d:200ms">
+        <img src="midia/retrato.jpg" width="760" height="1013" loading="lazy" decoding="async"
+             alt="Retrato de estúdio da Dra. Katia Miyoshi, sentada, de camisa branca e jeans" />
+        <figcaption>Dra. Katia Miyoshi · foto do perfil público dela no Instagram</figcaption>
+      </figure>
 
-      <!-- TEXTO REAL: história dela, na voz dela. Não foi escrito aqui de propósito:
-           formação, tempo de atuação e registro de conselho NÃO se inventam. -->
-      <div class="campo re" style="--d:300ms">
-        <span class="campo__r">Texto real · a história</span>
-        <p>Formação, tempo de atuação e registro profissional saem da própria Dra. Katia. A casa não escreve credencial de conselho — confere em dez segundos e é exercício ilegal da profissão.</p>
-      </div>
+      <!-- TEXTO REAL — tudo abaixo é declaração pública dela, reproduzida como está
+           escrita. A casa não inventa credencial de conselho; esta ela publica. -->
+      <ul class="ficha re" style="--d:300ms">
+        <li><b>Registro</b><span>CROSP 75.400</span></li>
+        <li><b>Formação</b><span>USP — Faculdade de Odontologia de Ribeirão Preto</span></li>
+        <li><b>Atuação</b><span>Especialista em Harmonização Facial</span></li>
+        <li><b>Também ensina</b><span>Professora de harmonização em cursos de pós-graduação</span></li>
+        <li><b>Atende em</b><span>Bella Lux Odontologia Estética · Jardim Califórnia</span></li>
+      </ul>
+      <p class="fonte re" style="--d:400ms">
+        Registro, formação e atuação como estão no perfil público dela —
+        <a href="https://www.instagram.com/drakatiamiyoshi" target="_blank" rel="noopener noreferrer">@drakatiamiyoshi</a>
+        (perfil verificado), lido em 24/09/2026, e na descrição do perfil dela no Google.
+        Não arredondamos nem acrescentamos nada.
+      </p>
+
+      <blockquote class="fala re" style="--d:500ms">
+        <p>Elevo sua autoestima com naturalidade.</p>
+        <cite>Dra. Katia Miyoshi — bio do Instagram dela</cite>
+      </blockquote>
+
+      <p class="fonte re" style="--d:600ms">Que ela ensina o próprio ofício não é só a bio dela: um colega
+        registrou publicamente, em 24/07/2026, a trajetória dela “dentro da HOF, de aluna a assistente
+        clínica nos cursos” — comentário público de <b>@dr.rogerioazevedo</b> no Instagram dela.</p>
     </div>
   </div>
 </section>
@@ -141,15 +160,16 @@
         <a href="https://www.google.com/maps/place/?q=place_id:ChIJF8NahO6_uZQRiwldTH9-OKU" target="_blank" rel="noopener noreferrer">conferir no Google Maps</a>
       </p>
 
-      <!-- FOTO REAL: galeria do consultório. São 119 fotos no perfil dela.
-           Encaixe: solte os arquivos em midia/galeria/ como foto-01.jpg, foto-02.jpg …
-           e liste em midia/galeria/galeria.json com w/h reais. A grade aceita N imagens.
-           PROIBIDO: rosto de paciente, antes-e-depois. -->
-      <ul class="galeria galeria--vazia" id="galeria" aria-label="Fotos do consultório"></ul>
-      <div class="campo re" id="galeria-vazia" style="--d:600ms">
-        <span class="campo__r">Foto real · consultório</span>
-        <p>Grade pronta para as fotos do perfil dela — consultório, fachada, equipe. Basta soltar os arquivos em <code>midia/galeria/</code> e listá-los no <code>galeria.json</code>. Sem rosto de paciente e sem antes-e-depois.</p>
-      </div>
+      <!-- FOTO REAL — 6 imagens do Instagram público dela, servidas do NOSSO
+           servidor (as URLs da CDN do Instagram são assinadas e expiram).
+           Cada uma foi aberta e olhada: são todas a própria Dra. Katia. Os painéis
+           de objeto (bolsa, unhas, cabelo) não têm rosto identificável.
+           O que foi RECUSADO e por quê está no LEIA-ME-IMAGENS.md. -->
+      <ul class="galeria" id="galeria" aria-label="Fotos da Dra. Katia Miyoshi"></ul>
+      <p class="fonte re" id="galeria-fonte" style="--d:600ms">
+        Fotos do perfil público dela no Instagram, de 14/08/2026 e 21/09/2026.
+        Nenhuma imagem de paciente, nenhum antes-e-depois.
+      </p>
     </div>
   </div>
 </section>
@@ -159,24 +179,21 @@
   <div class="secao__grade">
     <p class="secao__rot"><b>03</b> O que resolve</p>
     <div>
-      <h2 class="re">O que o consultório atende.</h2>
-      <p class="lede re" style="--d:100ms">Abaixo está só o que consta no perfil público. A lista fechada de procedimentos precisa vir dela — não se supõe procedimento de ninguém.</p>
+      <h2 class="re">O que ela trata, com o nome que ela mesma usa.</h2>
+      <p class="lede re" style="--d:100ms">Esta lista não foi suposta: cada item aparece nomeado nas publicações dela, e está escrito aqui do jeito que ela escreve. Quantos procedimentos cabem no seu caso é conversa de avaliação, não de site.</p>
       <ul class="itens">
-        <li class="re" style="--d:200ms">
-          <h3>Harmonização facial</h3>
-          <p>Categoria declarada no perfil público do consultório.</p>
-        </li>
-        <li class="re" style="--d:300ms">
-          <h3>Odontologia</h3>
-          <p>Categoria declarada no perfil público do consultório.</p>
-        </li>
+        <li class="re" style="--d:200ms"><h3>Toxina botulínica</h3><p>Citada em 5 publicações — linhas de expressão e olhar mais descansado.</p></li>
+        <li class="re" style="--d:300ms"><h3>Preenchimento labial</h3><p>Citado em 5 publicações, sempre associado a contorno e definição.</p></li>
+        <li class="re" style="--d:400ms"><h3>Preenchimento de mento</h3><p>Citado junto do labial, para proporção do terço inferior.</p></li>
+        <li class="re" style="--d:500ms"><h3>Ácido hialurônico e HarmonyCa</h3><p>Nomeados por ela nas publicações de harmonização.</p></li>
+        <li class="re" style="--d:600ms"><h3>Bioestimuladores de colágeno</h3><p>Indicados após avaliação da pele — ela descreve o Pinch Test como parte dessa avaliação.</p></li>
+        <li class="re" style="--d:700ms"><h3>Ultrassom microfocado (HIPRO)</h3><p>O tema mais recorrente do perfil: 9 publicações.</p></li>
+        <li class="re" style="--d:800ms"><h3>Microagulhamento e PDRN</h3><p>Citados para qualidade de pele.</p></li>
+        <li class="re" style="--d:900ms"><h3>Perfiloplastia</h3><p>Citada por ela como ajuste de perfil e harmonia do rosto.</p></li>
       </ul>
-      <!-- TEXTO REAL: lista de procedimentos, confirmada com a Dra. Katia.
-           Um item por linha, mesmo formato dos dois acima. -->
-      <div class="campo re" style="--d:400ms">
-        <span class="campo__r">Texto real · lista de procedimentos</span>
-        <p>A lista completa entra aqui depois de confirmada com ela, no mesmo formato das linhas acima.</p>
-      </div>
+      <p class="fonte re" style="--d:1000ms">Levantado das legendas das 40 publicações mais recentes do
+        <a href="https://www.instagram.com/drakatiamiyoshi" target="_blank" rel="noopener noreferrer">@drakatiamiyoshi</a>, lidas em 24/09/2026.
+        As categorias do perfil dela no Google são <b>harmonização facial</b> e <b>odontologia</b>.</p>
     </div>
   </div>
 </section>
@@ -186,14 +203,24 @@
   <div class="secao__grade">
     <p class="secao__rot"><b>04</b> O que não faz</p>
     <div>
-      <h2 class="re">Dizer o que não se faz é o que constrói confiança mais rápido.</h2>
-      <p class="lede re" style="--d:100ms">Em procedimento estético, o profissional que recusa vale mais do que o que aceita tudo. Esta é a seção que mais separa quem é sério — e é exatamente por isso que ela não pode ser escrita por nós.</p>
-      <!-- TEXTO REAL: os limites, na palavra dela.
-           Formato sugerido, um por linha:
-             <li><h3>Nome do que não faz</h3><p>Por quê / para onde encaminha.</p></li> -->
-      <div class="campo re" style="--d:200ms">
-        <span class="campo__r">Texto real · os limites</span>
-        <p>O que ela não realiza, o que encaminha para outro profissional e em que caso ela prefere não operar. Sai da voz dela; supor limite alheio seria inventar posição clínica.</p>
+      <h2 class="re">O exagero. É o que ela recusa, e ela repete isso há anos.</h2>
+      <p class="lede re" style="--d:100ms">Em procedimento estético, o profissional que recusa vale mais do que o que aceita tudo. Não escrevemos esta posição: ela está dita, nas palavras dela, em publicação atrás de publicação.</p>
+      <ul class="itens">
+        <li class="re" style="--d:200ms"><h3>Rosto transformado</h3><p>“Envelhecer bem é uma escolha — e não precisa significar se transformar.” <i>12/09/2026</i></p></li>
+        <li class="re" style="--d:300ms"><h3>Resultado que chama atenção</h3><p>“Rejuvenescimento não precisa ser exagerado.” <i>29/07/2026</i></p></li>
+        <li class="re" style="--d:400ms"><h3>Expressão apagada</h3><p>“Menos rugas. A mesma expressão. O mesmo você.” <i>26/08/2026</i></p></li>
+        <li class="re" style="--d:500ms"><h3>Protocolo igual para todo mundo</h3><p>“Não existe uma resposta única para todos os pacientes.” <i>04/09/2026</i></p></li>
+      </ul>
+      <p class="fonte re" style="--d:600ms">Frases reproduzidas como ela escreveu, com a data da publicação, no
+        <a href="https://www.instagram.com/drakatiamiyoshi" target="_blank" rel="noopener noreferrer">@drakatiamiyoshi</a>.</p>
+
+      <!-- TEXTO REAL: o que ela NÃO realiza e para onde encaminha.
+           As publicações dela sustentam a posição contra o exagero (acima), mas
+           NÃO dizem que procedimento ela não faz nem a quem encaminha. Isso só
+           pode sair da voz dela — supor limite clínico alheio seria inventar. -->
+      <div class="campo re" style="--d:700ms">
+        <span class="campo__r">Falta confirmar com ela</span>
+        <p>Que procedimento ela não realiza e para quem encaminha nesses casos. O material público sustenta a posição acima, mas não isto — e limite clínico não se supõe.</p>
       </div>
     </div>
   </div>
@@ -219,8 +246,8 @@
       <!-- TEXTO REAL: horário de funcionamento. O perfil do Google tem o horário
            preenchido — copiar de lá, dia a dia, em vez de supor. -->
       <div class="campo re" style="--d:700ms">
-        <span class="campo__r">Texto real · horários</span>
-        <p>Horário dia a dia, copiado do perfil do Google dela.</p>
+        <span class="campo__r">Falta confirmar com ela</span>
+        <p>O horário dia a dia. O perfil do Google dela tem o campo preenchido, mas o material que chegou aqui não traz o horário em si — então fica marcado em vez de suposto.</p>
       </div>
     </div>
   </div>
@@ -268,6 +295,6 @@
 </defs></svg>
 
 <script src="scrub-engine.js?v=7" defer></script>
-<script src="motion.js?v=10" defer></script>
+<script src="motion.js?v=11" defer></script>
 </body>
 </html>
