@@ -23,7 +23,7 @@
      O atraso de cada elemento vem do --d escrito no HTML, na escala medida do
      acervo (Tempos-do-Criativo §4.1): 100 ms dentro de uma mesma frase,
      833 ms entre blocos independentes. Aqui só se liga a classe. */
-  var alvos = document.querySelectorAll('.re, .traco, .secao');
+  var alvos = document.querySelectorAll('.re, .traco, .secao, .quique');
   if (pouco || !('IntersectionObserver' in window)) {
     Array.prototype.forEach.call(alvos, function (n) { n.classList.add('vis'); });
     contarTudo(true);
