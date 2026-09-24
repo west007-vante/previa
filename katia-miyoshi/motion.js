@@ -155,7 +155,7 @@
       // TRAVA: crossfade 0 faz o motor dividir por zero (fade = crossfade*vh)
       // e zerar a opacidade de TODAS as cenas. 0,01 é o corte seco equivalente.
       crossfade: Math.max(0.01, (cfg.crossfade != null ? cfg.crossfade : 0.12)),
-      diveScroll: 0.85, connScroll: 0.7,   // cadeia encurtada: 3,6 vh -> 2,55 vh
+      diveScroll: 0.7, connScroll: 0.6,   // cadeia encurtada: 3,6 vh -> 2,55 vh
       nav: false,          // o cabeçalho do site é o único
       atmosphere: false,   // partículas sobre imagem real = ruído; é clínica
       hint: 'role para entrar'
