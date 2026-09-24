@@ -128,7 +128,7 @@ a{color:inherit}
             color:var(--tinta-suave);display:flex;gap:10px;align-items:baseline;
             position:sticky;top:78px;align-self:start;height:max-content}
 .secao__rot b{color:var(--acento);font-weight:700}
-@media(max-width:899px){.secao__rot{position:static}}
+@media(max-width:899px){.secao__rot{position:relative;top:auto}}
 .secao h2{font-family:var(--display);font-weight:600;letter-spacing:-.03em;line-height:1.08;
           font-size:clamp(1.72rem,4.2vw,2.7rem);margin:0 0 .5em;text-wrap:balance}
 .secao p{margin:0 0 1.05em;max-width:62ch}
@@ -231,7 +231,6 @@ a{color:inherit}
 /* filete que cresce sob o rótulo da seção */
 .secao__rot::before{content:"";display:block;width:0;height:1px;background:var(--acento);
   transition:width .7s var(--quique);position:absolute;top:-14px;left:0}
-.secao__rot{position:relative}
 .secao.vis .secao__rot::before{width:34px}
 
 @media (prefers-reduced-motion:reduce){
