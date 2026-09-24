@@ -31,11 +31,11 @@
 <body>
 <div id="mundo"></div>
 <div class="wm" aria-hidden="true"><div class="wm__t"></div></div>
-<p class="aviso">Ambiente recriado para a abertura — não é foto do consultório · <a href="../">ver o site</a></p>
+<p class="aviso">Ambiente recriado — não é foto do consultório · <a href="../">ver o site</a></p>
 
 <script src="scrub-engine.js"></script>
 <script>
-fetch('cadeia.json?v=3',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(c){
+fetch('cadeia.json?v=4',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(c){
   var wa='https://wa.me/5516920003886?text=Ol%C3%A1%2C%20Dra.%20Katia%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial.';
   var secoes=c.sections.map(function(s,i){
     var o={id:s.id,label:s.label,still:s.still,eyebrow:s.eyebrow,title:s.title,body:s.body,accent:'#8A5638'};
@@ -50,7 +50,7 @@ fetch('cadeia.json?v=3',{cache:'no-cache'}).then(function(r){return r.json()}).t
     hint:'role para entrar',
     nav:true, atmosphere:true,
     diveScroll:1.2, connScroll:0.9,
-    crossfade:(c.crossfade!=null?c.crossfade:0.12),
+    crossfade:Math.max(0.01,(c.crossfade!=null?c.crossfade:0.12)),
     sections:secoes,
     connectors:(c.connectors||[]).filter(Boolean)
   });

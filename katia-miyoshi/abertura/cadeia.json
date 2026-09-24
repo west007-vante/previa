@@ -1,9 +1,9 @@
 {
   "_estado": "24/09/2026 — cadeia COMPLETA. As tres cenas passaram no QA da Station (entrega/), 832x480, 24 fps, 81 quadros, 3,375 s cada; 10,125 s no total.",
-  "_costura": "O ultimo quadro de cada cena E o primeiro da seguinte (PSNR/SSIM medidos). Por isso crossfade=0 — qualquer dissolucao destroi a emenda. NAO volte para o padrao 0.12.",
+  "_costura": "O ultimo quadro de cada cena E o primeiro da seguinte (PSNR/SSIM medidos): a emenda nao pode ser dissolvida. ATENCAO: crossfade=0 QUEBRA o motor — em read() ele faz smooth(1 - outside/fade) com fade = crossfade*vh, entao 0 vira divisao por zero, opacity=NaN e TODAS as cenas somem. 0.01 e o corte seco equivalente: ~9 px de rolagem de sobreposicao a 900 px de viewport, contra ~108 px do padrao 0.12. O mount ainda protege com Math.max(0.01,...).",
   "_formato": "O motor busca UM arquivo por cena (fetch->Blob), entao nao ha <source>: entra o .mp4 (H.264), porque VP9/WebM nao e confiavel no Safari/iOS. Os .webm irmaos ficam em entrega/ para quem servir com <source>.",
   "_legenda": "TRAVA: as cenas sao ambiente RECRIADO, nao registro do consultorio dela. Nenhuma legenda, alt ou titulo pode apresenta-las como 'nossa clinica' / 'nosso espaco'. A foto real entra na galeria do site, marcada como foto.",
-  "crossfade": 0,
+  "crossfade": 0.01,
   "sections": [
     {
       "id": "luz",
