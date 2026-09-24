@@ -363,5 +363,5 @@ main{position:relative;z-index:300}
 /* as datas nas frases da seção 04 */
 .nao .itens i{font-style:normal;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;
               color:var(--tinta-suave);white-space:nowrap}
-.galeria{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.galeria{grid-template-columns:repeat(auto-fill,minmax(clamp(140px,22vw,240px),1fr))}
 .galeria img{aspect-ratio:4/5}
