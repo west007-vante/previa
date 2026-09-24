@@ -261,9 +261,9 @@ a{color:inherit}
 #palco img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
 
 main{position:relative;z-index:300}
-/* tudo depois do pouso é página opaca: cobre o motor de vez */
-main>.secao,main>.fecho{background:var(--papel)}
-main>.fecho{background:var(--papel-2)}
+/* Tudo depois do pouso é página opaca e FULL-BLEED. Não dá para pôr o fundo
+   nas seções: elas carregam .env (máx. 1240px) e a sala vazava pelas laterais. */
+.corpo{position:relative;background:var(--papel)}
 
 /* ---------- POUSO ---------- */
 .pouso{position:relative;min-height:190vh;background:transparent}

@@ -200,7 +200,7 @@
       var fimPouso = fimCadeia + 1.5 * vh;
       if (pouso) {
         var topoAbs = pouso.getBoundingClientRect().top + y;
-        fimPouso = topoAbs + pouso.offsetHeight * 0.78;
+        fimPouso = topoAbs + pouso.offsetHeight * 0.74;   // 74% = onde o véu vira papel sólido
       }
       if (y > fimPouso) { palco.classList.remove('on'); } else if (carregouPalco) { palco.classList.add('on'); }
 
