@@ -114,7 +114,7 @@ a{color:inherit}
 .plano .g-fina{stroke:var(--tinta);stroke-opacity:.15}
 .plano .g-media{stroke:var(--tinta);stroke-opacity:.26}
 .plano .g-acento{stroke:var(--acento-claro);stroke-opacity:.62}
-.plano .g-rot{fill:var(--tinta);fill-opacity:.4;font-family:var(--mono);font-size:17px;letter-spacing:3px}
+.plano .g-rot{fill:var(--tinta);fill-opacity:.4;font-family:var(--mono);font-size:40px;letter-spacing:6px}
 .plano__nota{position:absolute;left:0;right:0;bottom:0;padding:11px 14px;
              font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
              color:var(--tinta-suave);background:color-mix(in srgb,var(--papel) 82%,transparent);
@@ -223,9 +223,9 @@ a{color:inherit}
 .quique.vis{animation:quique 600ms var(--quique) both;animation-delay:var(--d,0ms)}
 
 /* traço que se desenha — a geometria de harmonia entrando por rolagem */
-.traco [pathLength]{stroke-dasharray:1;stroke-dashoffset:1;
-  transition:stroke-dashoffset 1.4s var(--quique);transition-delay:var(--d,0ms)}
-.traco.vis [pathLength]{stroke-dashoffset:0}
+@keyframes desenha{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.traco [pathLength]{stroke-dasharray:1;stroke-dashoffset:1}
+.traco.vis [pathLength]{animation:desenha 1.4s var(--quique) var(--d,0ms) both}
 
 /* filete que cresce sob o rótulo da seção */
 .secao__rot::before{content:"";display:block;width:0;height:1px;background:var(--acento);
@@ -237,7 +237,7 @@ a{color:inherit}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
                        transition-duration:.001ms!important;scroll-behavior:auto!important}
   .re{opacity:1;transform:none}
-  .traco [pathLength]{stroke-dashoffset:0}
+  .traco [pathLength]{stroke-dashoffset:0;animation:none}
   .secao__rot::before{width:34px}
 }
 
