@@ -30,6 +30,7 @@
      genérico em grade"). Raio generoso e consistente, sombra difusa em
      camadas: profundidade, não contorno. */
   --raio-g:26px; --raio-m:18px; --raio-p:12px;
+  --veu:rgba(246,242,236,.965);
   --sombra-1:0 1px 2px rgba(26,23,19,.05), 0 4px 12px rgba(26,23,19,.05);
   --sombra-2:0 2px 6px rgba(26,23,19,.06), 0 14px 34px rgba(26,23,19,.09);
   --sombra-3:0 6px 18px rgba(26,23,19,.09), 0 34px 70px rgba(26,23,19,.16);
@@ -40,7 +41,7 @@
     --papel:#14120F; --papel-2:#1D1A16; --papel-3:#26221C;
     --tinta:#F0EBE3; --tinta-suave:#BDB2A1;   /* 8,75:1 sobre o papel escuro */
     --acento:#C98B5E; --acento-claro:#C98B5E;
-    --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F;
+    --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F; --veu:rgba(20,18,15,.965);
     --sombra-1:0 1px 2px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.28);
     --sombra-2:0 2px 6px rgba(0,0,0,.34), 0 14px 34px rgba(0,0,0,.4);
     --sombra-3:0 6px 18px rgba(0,0,0,.4), 0 34px 70px rgba(0,0,0,.5);
@@ -50,7 +51,7 @@
   --papel:#14120F; --papel-2:#1D1A16; --papel-3:#26221C;
   --tinta:#F0EBE3; --tinta-suave:#BDB2A1;   /* 8,75:1 sobre o papel escuro */
   --acento:#C98B5E; --acento-claro:#C98B5E;
-  --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F;
+  --linha:rgba(240,235,227,.16); --linha-forte:rgba(240,235,227,.3); --zap-tinta:#14120F; --veu:rgba(20,18,15,.965);
     --sombra-1:0 1px 2px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.28);
     --sombra-2:0 2px 6px rgba(0,0,0,.34), 0 14px 34px rgba(0,0,0,.4);
     --sombra-3:0 6px 18px rgba(0,0,0,.4), 0 34px 70px rgba(0,0,0,.5);
@@ -432,7 +433,7 @@ main{position:relative;z-index:300}
        1) expande centralizada  2) desliza para o lado  3) a descrição entra --- */
 .lupa{position:fixed;inset:0;z-index:8000;display:grid;place-items:center}
 .lupa[hidden]{display:none}
-.lupa__fundo{position:absolute;inset:0;background:color-mix(in srgb,var(--papel) 94%,transparent);
+.lupa__fundo{position:absolute;inset:0;background:var(--veu);
   opacity:0;transition:opacity .28s var(--macio)}
 .lupa.on .lupa__fundo{opacity:1}
 
