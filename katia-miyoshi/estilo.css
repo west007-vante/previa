@@ -221,12 +221,14 @@ a{color:inherit}
   83.3%{transform:scale(.95)}
   100%{transform:scale(1)}
 }
-.quique.vis{animation:quique 600ms var(--quique) both;animation-delay:var(--d,0ms)}
+.quique.vis{animation-name:quique;animation-duration:600ms;
+  animation-timing-function:var(--quique);animation-delay:var(--d,0ms);animation-fill-mode:both}
 
 /* traço que se desenha — a geometria de harmonia entrando por rolagem */
 @keyframes desenha{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .traco [pathLength]{stroke-dasharray:1;stroke-dashoffset:1}
-.traco.vis [pathLength]{animation:desenha 1.4s var(--quique) var(--d,0ms) both}
+.traco.vis [pathLength]{animation-name:desenha;animation-duration:1.4s;
+  animation-timing-function:var(--quique);animation-delay:var(--d,0ms);animation-fill-mode:both}
 
 /* filete que cresce sob o rótulo da seção */
 .secao__rot::before{content:"";display:block;width:0;height:1px;background:var(--acento);
@@ -237,7 +239,7 @@ a{color:inherit}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
                        transition-duration:.001ms!important;scroll-behavior:auto!important}
   .re{opacity:1;transform:none}
-  .traco [pathLength]{stroke-dashoffset:0;animation:none}
+  .traco [pathLength]{stroke-dashoffset:0;animation-name:none}
   .secao__rot::before{width:34px}
 }
 
