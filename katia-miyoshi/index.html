@@ -38,6 +38,7 @@ body{margin:0;background:var(--papel);color:var(--tinta);
   font:400 var(--t2)/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
   letter-spacing:.005em;overflow-x:hidden}
 img,video{max-width:100%;display:block}
+[hidden]{display:none!important}
 a{color:var(--acento);text-underline-offset:3px}
 h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
   letter-spacing:-.018em;margin:0}
@@ -217,8 +218,10 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
 
   <section class="heroi" id="topo">
     <div class="heroi__mid">
-      <img id="heroi-poster" src="midia/cena1_poster.jpg" width="1280" height="720" alt="" fetchpriority="high">
-      <video id="heroi-video" muted playsinline loop preload="none" poster="midia/cena1_poster.jpg" aria-hidden="true" hidden></video>
+      <video id="heroi-video" poster="midia/cena1_poster.jpg" autoplay muted loop playsinline
+             preload="auto" aria-hidden="true" tabindex="-1">
+        <source src="midia/cena1.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="env heroi__in">
       <p class="local">Ribeirão Preto · SP</p>
@@ -398,6 +401,7 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
           v.muted = true; v.loop = true; v.playsInline = true;
           v.setAttribute("playsinline",""); v.setAttribute("muted",""); v.setAttribute("loop","");
           v.preload = "none"; v.setAttribute("aria-hidden","true");
+          v.autoplay = true; v.setAttribute("autoplay","");
           var img = fig.querySelector("img");
           if(img) v.poster = img.getAttribute("src");
           fig.insertBefore(v, fig.firstChild);
@@ -409,19 +413,22 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:300;line-height:1.14;
   }, {rootMargin:"120px 0px"});
   document.querySelectorAll("[data-clipe]").forEach(function(f){ obsVid.observe(f); });
 
-  /* herói: o poster pinta primeiro, o clipe entra depois que a página já está de pé */
-  var hv = document.getElementById("heroi-video"), hp = document.getElementById("heroi-poster");
-  function heroiEntra(){
-    if(pouco) return;
-    hv.hidden = false;
-    hv.src = "midia/cena1.mp4";
-    hv.load();
-    var p = hv.play();
-    if(p && p.then) p.then(function(){ hp.style.opacity = "0"; hp.style.transition = "opacity .6s"; })
-                     .catch(function(){ hv.hidden = true; });
+  /* herói: o vídeo está no markup com autoplay+muted+playsinline, que é o que
+     Chrome e Safari de celular respeitam. O JS só insiste uma vez se o aparelho
+     tiver recusado — e NUNCA esconde o vídeo, senão sobra tela vazia.
+     LEI aprendida em 24/09/2026: `video{display:block}` atropela o atributo
+     `hidden`, e um catch que re-esconde o elemento transforma falha de toque
+     em tela morta. O poster do próprio <video> já é o plano B. */
+  var hv = document.getElementById("heroi-video");
+  if(hv){
+    if(pouco){ hv.removeAttribute("autoplay"); hv.pause(); }
+    else {
+      var insistir = function(){ var p = hv.play(); if(p && p.catch) p.catch(function(){}); };
+      if(hv.paused) insistir();
+      addEventListener("load", function(){ if(hv.paused) insistir(); });
+      document.addEventListener("visibilitychange", function(){ if(!document.hidden && hv.paused) insistir(); });
+    }
   }
-  if(document.readyState === "complete") setTimeout(heroiEntra, 400);
-  else addEventListener("load", function(){ setTimeout(heroiEntra, 400); });
 
   /* ---- galeria + lupa ---- */
   var lupa = document.getElementById("lupa"),
