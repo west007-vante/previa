@@ -126,7 +126,7 @@ a{color:inherit}
 
 
 /* ---------- seções em dossiê ---------- */
-.secao{border-top:1px solid var(--linha);padding-block:clamp(34px,4.6vw,62px)}
+.secao{border-top:1px solid var(--linha);padding-block:clamp(30px,4vw,52px)}
 .secao__grade{display:grid;gap:clamp(18px,3vw,44px);grid-template-columns:1fr}
 @media(min-width:900px){.secao__grade{grid-template-columns:200px minmax(0,1fr)}}
 .secao__rot{font-family:var(--mono);font-size:var(--t0);letter-spacing:.18em;text-transform:uppercase;
@@ -287,7 +287,7 @@ main{position:relative;z-index:300}
 .corpo{position:relative;background:var(--papel)}
 
 /* ---------- POUSO ---------- */
-   .pouso{position:relative;min-height:96vh;background:transparent}
+   .pouso{position:relative;min-height:84vh;background:transparent}
 /* o véu faz a sala virar página: transparente em cima, papel embaixo.
    É rolagem pura — nenhum listener, nada para dessincronizar. */
 .pouso__veu{position:absolute;inset:0;pointer-events:none;
@@ -310,11 +310,12 @@ main{position:relative;z-index:300}
     color-mix(in srgb,var(--papel) 73%,transparent) 62%,
     transparent 100%);
   -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.pouso__copy .hero__olho{color:var(--tinta-suave)}
 .pouso__copy h1{font-family:var(--display);font-weight:600;letter-spacing:-.035em;line-height:1.02;
   font-size:var(--t8);margin:.42em 0 0;text-wrap:balance}
 .pouso__copy h1 em{font-style:normal;display:block;color:var(--acento)}
 @media(max-width:899px){
-  .pouso{min-height:104vh}
+  .pouso{min-height:92vh}
   .pouso__in{align-items:flex-end;padding-block:clamp(90px,16vh,160px) clamp(28px,6vh,60px)}
   .pouso__copy::before{inset:-20px -18px;
     background:linear-gradient(to top,
@@ -540,14 +541,13 @@ main{position:relative;z-index:300}
   font-family:var(--mono);font-size:var(--t0);letter-spacing:.12em;text-transform:uppercase;
   transition:color .4s var(--macio),background .4s var(--macio)}
 .indice a b{color:var(--acento);font-weight:700}
-.indice a span{opacity:0;transform:translateX(6px);
-  transition:opacity .4s var(--macio),transform .4s var(--macio)}
+.indice a span{opacity:.72;transition:opacity .4s var(--macio)}
 .indice a:hover{color:var(--tinta);background:var(--papel-2)}
-.indice a:hover span{opacity:1;transform:none}
+.indice a:hover span{opacity:1}
 .topo.oculto ~ .indice{opacity:0;pointer-events:none}
 .ao-topo{display:inline-flex;align-items:center;gap:8px;margin-top:14px;
   font-family:var(--mono);font-size:var(--t0);letter-spacing:.12em;text-transform:uppercase;
   color:var(--tinta-suave);text-decoration:none;border-bottom:1px solid var(--linha-forte);
   padding-bottom:3px;transition:color .4s var(--macio)}
 .ao-topo:hover{color:var(--acento)}
-@media (prefers-reduced-motion:reduce){.indice a span{opacity:1;transform:none}}
+

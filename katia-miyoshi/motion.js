@@ -201,8 +201,8 @@
       // É o vão de respiro que o +1 vh da pista virou — a desaceleração do
       // clipe 3 entregue ao CSS, como pede o DIRECAO.md.
       // a legenda sai enquanto o palco entra: um gesto só, sem pausa
-      swRoot.classList.toggle('quieto', p > 0.28);
-      swRoot.classList.toggle('fim', y > fimCadeia + 0.25 * vh);
+      swRoot.classList.toggle('quieto', !pouco && p > 0.28);   // sem movimento, a legenda FICA
+      swRoot.classList.toggle('fim', !pouco && y > fimCadeia + 0.25 * vh);
 
       // o palco só precisa existir enquanto o véu do pouso não fechou.
       // ATENÇÃO: offsetTop do #pouso é relativo ao <main> (position:relative),
