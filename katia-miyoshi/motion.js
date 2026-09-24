@@ -113,4 +113,115 @@
       })
       .catch(function () { /* sem galeria: o espaço marcado continua na tela */ });
   }
+
+  /* =========================================================================
+     A CADEIA DE VÍDEO COMO ENTRADA DO SITE — uma página só.
+
+     A travessia é desenhada para NÃO ter corte:
+       1. o motor rola as 3 cenas (pista = 3,6 vh);
+       2. no último quarto da cena 3 o #palco entra por baixo — ele é o
+          ÚLTIMO QUADRO REAL da cena 3, com o mesmo object-fit do motor, então
+          vídeo e imagem são o mesmo pixel e a troca é invisível;
+       3. o vídeo sai; fica a imagem parada. A câmera desacelerou e parou —
+          é a costura que o DIRECAO.md pediu;
+       4. o .pouso sobe por cima com o véu em gradiente: a sala vira página.
+          Isso é rolagem pura, sem listener, então não tem como dessincronizar;
+       5. passada a travessia, o motor é desligado (display:none) e o aviso
+          da trava some, porque não há mais imagem gerada na tela.
+     ========================================================================= */
+  var raiz = document.getElementById('abertura');
+  var palco = document.getElementById('palco');
+  var palcoImg = document.getElementById('palco-img');
+  var aviso = document.getElementById('aviso');
+  var topo = document.querySelector('.topo');
+  var REPOUSO = 'midia/repouso.jpg';
+
+  if (topo) topo.classList.add('oculto');   // a marca não fica no canto desde o 1º quadro
+
+  function montarCadeia(cfg) {
+    var wa = document.querySelector('a[href*="wa.me"]');
+    var secoes = cfg.sections.map(function (x) {
+      var o = { id: x.id, label: x.label, still: x.still, eyebrow: x.eyebrow,
+                title: x.title, body: x.body, accent: '#8A5638' };
+      if (x.clip) o.clip = x.clip;
+      if (x.clipMobile) o.clipMobile = x.clipMobile;
+      return o;
+    });
+    window.mountScrollWorld(raiz, {
+      sections: secoes,
+      connectors: (cfg.connectors || []).filter(Boolean),
+      // TRAVA: crossfade 0 faz o motor dividir por zero (fade = crossfade*vh)
+      // e zerar a opacidade de TODAS as cenas. 0,01 é o corte seco equivalente.
+      crossfade: Math.max(0.01, (cfg.crossfade != null ? cfg.crossfade : 0.12)),
+      diveScroll: 1.2, connScroll: 0.9,
+      nav: false,          // o cabeçalho do site é o único
+      atmosphere: false,   // partículas sobre imagem real = ruído; é clínica
+      hint: 'role para entrar'
+    });
+    if (wa) { /* o CTA mora no pouso, não na cadeia */ }
+    ligarTravessia();
+  }
+
+  function ligarTravessia() {
+    var swRoot = raiz.querySelector('.sw-root') || raiz;
+    var pedido = false, carregouPalco = false;
+
+    function passo() {
+      pedido = false;
+      var vh = window.innerHeight;
+      var y = window.scrollY || window.pageYOffset;
+      var fimCadeia = raiz.offsetHeight || (3.6 * vh);
+
+      // o palco entra no último quarto da cadeia, por baixo do vídeo
+      var p = (y - (fimCadeia - 0.55 * vh)) / (0.5 * vh);
+      p = p < 0 ? 0 : (p > 1 ? 1 : p);
+      if (p > 0 && !carregouPalco) {         // só baixa a imagem quando ela vai servir
+        carregouPalco = true;
+        palcoImg.src = REPOUSO;
+        palco.classList.add('on');
+      }
+      palco.style.opacity = pouco ? String(p > 0 ? 1 : 0) : String(p);
+
+      // passada a travessia o motor não tem mais nada a fazer na tela
+      var fora = y > fimCadeia + 0.35 * vh;
+      swRoot.classList.toggle('fim', fora);
+      if (fora && carregouPalco === false) { carregouPalco = true; palcoImg.src = REPOUSO; palco.classList.add('on'); }
+
+      // o palco só precisa existir enquanto o véu do pouso não fechou
+      var pouso = document.getElementById('pouso');
+      var fimPouso = pouso ? pouso.offsetTop + pouso.offsetHeight * 0.78 : fimCadeia + 1.5 * vh;
+      if (y > fimPouso) { palco.classList.remove('on'); } else if (carregouPalco) { palco.classList.add('on'); }
+
+      // a marca entra quando o nome pousa
+      if (topo) topo.classList.toggle('oculto', y < fimCadeia - 0.25 * vh);
+
+      // o aviso da trava vale enquanto houver imagem gerada na tela
+      if (aviso) aviso.classList.toggle('off', y > fimPouso);
+    }
+
+    function agenda() { if (!pedido) { pedido = true; requestAnimationFrame(passo); } }
+    window.addEventListener('scroll', agenda, { passive: true });
+    window.addEventListener('resize', agenda);
+    window.addEventListener('load', agenda);
+    passo();
+  }
+
+  if (raiz && window.fetch) {
+    fetch('cadeia.json?v=7', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (c) {
+        if (c && window.mountScrollWorld) montarCadeia(c);
+        else semCadeia();
+      })
+      .catch(semCadeia);
+  } else { semCadeia(); }
+
+  // se a cadeia não carregar, o site continua: o pouso vira o topo da página
+  function semCadeia() {
+    if (raiz) raiz.style.display = 'none';
+    if (aviso) aviso.classList.add('off');
+    if (topo) topo.classList.remove('oculto');
+    var pouso = document.getElementById('pouso');
+    if (pouso) { pouso.style.minHeight = '0'; pouso.classList.add('sem-cadeia'); }
+  }
 })();

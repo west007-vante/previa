@@ -1,0 +1,43 @@
+{
+  "_pagina_unica": "24/09/2026 — a cadeia e o site sao UMA pagina so. Esta config alimenta o motor montado em #abertura pelo motion.js.",
+  "_nome": "Lei 3.5 do acervo: o nome entra no FIM, no terco esquerdo do quadro de repouso — nunca fixo no canto desde o primeiro quadro. Por isso NENHUMA cena aqui traz 'Dra. Katia Miyoshi': o nome pousa na secao .pouso, depois da cadeia.",
+  "_legenda": "TRAVA: ambiente RECRIADO, nao registro do consultorio dela. Nenhuma copy pode apresentar as cenas como o espaco real, e nenhuma cita endereco.",
+  "_crossfade": "0.01, nao 0: o motor faz smooth(1 - outside/fade) com fade = crossfade*vh; 0 vira divisao por zero e apaga TODAS as cenas. 0.01 = ~8 px de sobreposicao a 768 px de viewport, contra ~92 px do padrao 0.12.",
+  "crossfade": 0.01,
+  "sections": [
+    {
+      "id": "luz",
+      "label": "A luz",
+      "still": "midia/cena1_poster.jpg",
+      "clip": "midia/cena1.mp4",
+      "clipMobile": null,
+      "eyebrow": "01",
+      "title": "Uma indicação precisa de onde pousar.",
+      "body": "Quem indica já confia. Quem foi indicado precisa ver por quê."
+    },
+    {
+      "id": "vao",
+      "label": "O vão",
+      "still": "midia/cena2_poster.jpg",
+      "clip": "midia/cena2.mp4",
+      "clipMobile": null,
+      "eyebrow": "02",
+      "title": "226 avaliações. Média 5,0.",
+      "body": "Avaliação pública no Google, lida em 24/09/2026."
+    },
+    {
+      "id": "sala",
+      "label": "A sala",
+      "still": "midia/cena3_poster.jpg",
+      "clip": "midia/cena3.mp4",
+      "clipMobile": null,
+      "eyebrow": "03",
+      "title": "Uma conversa antes de qualquer decisão.",
+      "body": "Sem formulário. Um caminho só."
+    }
+  ],
+  "connectors": [
+    null,
+    null
+  ]
+}

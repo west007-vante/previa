@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="estilo.css?v=6" />
+<link rel="stylesheet" href="estilo.css?v=7" />
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -35,20 +35,28 @@
 </header>
 
 <span id="topo"></span>
+
+<!-- a cadeia de vídeo: o motor monta aqui e a pista dele dá a altura de rolagem -->
+<div id="abertura"></div>
+
+<!-- fundo fixo do pouso: último quadro da cena 3, aparece por baixo do vídeo
+     no fim da cadeia para que a saída do vídeo não tenha corte -->
+<div id="palco" aria-hidden="true"><img id="palco-img" alt="" decoding="async" width="832" height="480"></div>
+
 <main id="conteudo">
 
 <!-- ===================================================================
-     ABERTURA — aqui entra a cadeia curta de vídeo scroll-scrubbed.
-     ESTADO EM 24/09/2026: o agente da Station NÃO entregou os clipes
-     (~/steve-site/work/station/katia/ existe mas clipes/, pranchas/,
-     quadros/ e logs/ estão VAZIAS). Então a abertura está com a
-     PRANCHA ESTÁTICA abaixo — geometria, não fotografia, para não
-     inventar imagem nenhuma.
-     O encaixe está montado e provado em abertura/index.html.
+     POUSO — onde a cadeia de vídeo ENTREGA o movimento ao CSS.
+     O fundo (#palco) é o ÚLTIMO QUADRO REAL da cena 3, fixo e com o mesmo
+     object-fit do motor: quando o vídeo some, a imagem por baixo é pixel a
+     pixel a mesma — a travessia não tem corte.
+     O nome pousa aqui, no terço esquerdo, e não antes (lei 3.5 do acervo:
+     nome/logo entra no fim, nunca fixo no canto desde o primeiro quadro).
      =================================================================== -->
-<section class="hero">
-  <div class="env hero__grade">
-    <div>
+<section class="pouso" id="pouso">
+  <div class="pouso__veu" aria-hidden="true"></div>
+  <div class="env pouso__in">
+    <div class="pouso__copy">
       <p class="hero__olho re" style="--d:100ms">Ribeirão Preto · SP</p>
       <h1 class="re" style="--d:200ms">Dra. Katia Miyoshi<em>Harmonização facial</em></h1>
       <p class="hero__sub re" style="--d:300ms">Odontologia e harmonização facial em consultório no Jardim Califórnia. O contato é direto, por WhatsApp.</p>
@@ -58,7 +66,6 @@
           <span>Falar pelo WhatsApp<span class="zap__sub">(16) 92000-3886</span></span>
         </a>
       </div>
-
       <div class="faixa re" style="--d:933ms">
         <div class="faixa__i">
           <span class="faixa__v" data-conta="5,0">5,0</span>
@@ -75,34 +82,6 @@
         </div>
       </div>
     </div>
-
-    <figure class="plano" style="margin:0">
-      <!-- PRANCHA DA ABERTURA — substituível pelo 1º quadro da cadeia da Station.
-           É geometria de proporção facial (terços), NÃO é rosto de ninguém. -->
-      <svg class="traco" style="--d:1766ms" viewBox="0 0 1600 1000" role="img" aria-label="Plano geométrico de proporção facial: eixo central, terços e arcos de contorno">
-        <rect class="plano__bg" width="1600" height="1000"/>
-        <g class="g-fina" fill="none" stroke-width="1">
-          <path d="M800 90 V910"/>
-          <path d="M300 310 H1300"/><path d="M300 500 H1300"/><path d="M300 690 H1300"/>
-          <path d="M560 150 V850"/><path d="M1040 150 V850"/>
-        </g>
-        <g class="g-media" fill="none" stroke-width="1.4">
-          <path pathLength="1" d="M620 300 C620 210 720 168 800 168 C880 168 980 210 980 300"/>
-          <path pathLength="1" d="M604 470 C604 640 690 800 800 800 C910 800 996 640 996 470"/>
-          <path pathLength="1" d="M660 500 C700 560 900 560 940 500"/>
-        </g>
-        <g class="g-acento" fill="none" stroke-width="1.6">
-          <circle pathLength="1" cx="800" cy="500" r="232"/>
-          <circle pathLength="1" cx="800" cy="500" r="143"/>
-        </g>
-        <g class="g-rot">
-          <text x="300" y="296">TERÇO SUPERIOR</text>
-          <text x="300" y="486">TERÇO MÉDIO</text>
-          <text x="300" y="676">TERÇO INFERIOR</text>
-        </g>
-      </svg>
-      <figcaption class="plano__nota">Prancha de proporção · espaço da abertura em vídeo</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -276,12 +255,15 @@
   </div>
 </footer>
 
+<p class="aviso" id="aviso">Ambiente recriado — não é foto do consultório</p>
+
 <div class="wm" aria-hidden="true"><div class="wm__t"></div></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <path id="zapico" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.17 8.17 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/>
 </defs></svg>
 
-<script src="motion.js?v=6" defer></script>
+<script src="scrub-engine.js?v=7" defer></script>
+<script src="motion.js?v=7" defer></script>
 </body>
 </html>

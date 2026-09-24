@@ -2,60 +2,17 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Abertura — Dra. Katia Miyoshi</title>
-<meta name="robots" content="noindex,nofollow,noarchive,noimageindex" />
-<meta name="referrer" content="no-referrer" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
-<style>
-  :root,.sw-root{
-    --sw-bg:#F6F2EC; --sw-ink:#1A1713; --sw-ink-soft:#6E655A; --sw-accent:#8A5638;
-    --sw-font-display:"Fraunces",Georgia,serif;
-    --sw-font-body:"Figtree","Helvetica Neue",Helvetica,sans-serif;
-  }
-  html,body{margin:0;background:var(--sw-bg);color:var(--sw-ink);font-family:var(--sw-font-body);overflow-x:hidden}
-  /* marca d'água de prévia, igual à do site */
-  .wm{position:fixed;inset:0;z-index:9000;pointer-events:none;overflow:hidden;contain:strict}
-  .wm__t{position:absolute;inset:-60%;transform:rotate(-24deg);background-repeat:repeat;opacity:.3;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='108' viewBox='0 0 300 108'%3E%3Cg font-family='Helvetica,Arial,sans-serif' font-size='11.5' font-weight='600' letter-spacing='1.6'%3E%3Ctext x='60' y='34.7' fill='%23000' fill-opacity='.15'%3EPRÉVIA · Steve%3C/text%3E%3Ctext x='60' y='34' fill='%23fff' fill-opacity='.34'%3EPRÉVIA · Steve%3C/text%3E%3Ctext x='-90' y='88.7' fill='%23000' fill-opacity='.15'%3EPRÉVIA · Steve%3C/text%3E%3Ctext x='-90' y='88' fill='%23fff' fill-opacity='.34'%3EPRÉVIA · Steve%3C/text%3E%3Ctext x='210' y='88.7' fill='%23000' fill-opacity='.15'%3EPRÉVIA · Steve%3C/text%3E%3Ctext x='210' y='88' fill='%23fff' fill-opacity='.34'%3EPRÉVIA · Steve%3C/text%3E%3C/g%3E%3C/svg%3E")}
-  .aviso{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:600;
-    font:600 11px/1.5 var(--sw-font-body);letter-spacing:.08em;text-transform:uppercase;
-    color:var(--sw-ink-soft);background:color-mix(in srgb,#fff 82%,transparent);
-    border:1px solid color-mix(in srgb,var(--sw-accent) 26%,transparent);border-radius:999px;
-    padding:7px 14px;text-align:center;max-width:min(94vw,560px)}
-  @media(max-width:520px){.aviso{font-size:10px;letter-spacing:.04em;padding:6px 11px}}
-  .aviso a{color:var(--sw-accent)}
-</style>
+<title>Dra. Katia Miyoshi</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="canonical" href="../" />
+<meta http-equiv="refresh" content="0; url=../" />
+<script>location.replace('../' + location.hash);</script>
+<style>body{margin:0;font:400 16px/1.6 system-ui;padding:40px;background:#F6F2EC;color:#1A1713}</style>
 </head>
 <body>
-<div id="mundo"></div>
-<div class="wm" aria-hidden="true"><div class="wm__t"></div></div>
-<p class="aviso">Ambiente recriado — não é foto do consultório</p>
-
-<script src="scrub-engine.js"></script>
-<script>
-fetch('cadeia.json?v=4',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(c){
-  var wa='https://wa.me/5516920003886?text=Ol%C3%A1%2C%20Dra.%20Katia%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial.';
-  var secoes=c.sections.map(function(s,i){
-    var o={id:s.id,label:s.label,still:s.still,eyebrow:s.eyebrow,title:s.title,body:s.body,accent:'#8A5638'};
-    if(s.clip) o.clip=s.clip;
-    if(s.clipMobile) o.clipMobile=s.clipMobile;
-    if(i===c.sections.length-1) o.cta={primary:{label:'Falar pelo WhatsApp',href:wa},secondary:{label:'Ver o site',href:'../'}};
-    return o;
-  });
-  mountScrollWorld(document.getElementById('mundo'),{
-    brand:{name:'Dra. Katia Miyoshi',href:'../'},
-    cta:{label:'WhatsApp',href:wa},
-    hint:'role para entrar',
-    nav:true, atmosphere:true,
-    diveScroll:1.2, connScroll:0.9,
-    crossfade:Math.max(0.01,(c.crossfade!=null?c.crossfade:0.12)),
-    sections:secoes,
-    connectors:(c.connectors||[]).filter(Boolean)
-  });
-});
-</script>
+<!-- A abertura deixou de ser pagina separada em 24/09/2026: a cadeia de video
+     virou a ENTRADA do site, na mesma URL e na mesma rolagem. Isto aqui existe
+     so para nao quebrar link antigo. -->
+<p>A abertura agora faz parte do site. <a href="../">Ir para o site</a>.</p>
 </body>
 </html>
