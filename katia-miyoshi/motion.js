@@ -106,7 +106,7 @@
         if (!fotos.length) { if (fonteGal) fonteGal.style.display = 'none'; return; }
         grade.innerHTML = fotos.map(function (f) {
           var alt = (f.alt || 'Foto do consultório').replace(/"/g, '&quot;');
-          return '<li><img src="midia/galeria/' + encodeURIComponent(f.arq) + '" alt="' + alt +
+          return '<li><img src="midia/galeria/' + encodeURIComponent(f.arq) + '?v=1" alt="' + alt +
                  '" width="' + (f.w || 1200) + '" height="' + (f.h || 900) + '" loading="lazy" decoding="async"></li>';
         }).join('');
         grade.classList.remove('galeria--vazia');
