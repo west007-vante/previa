@@ -1,238 +1,247 @@
 {
-  "previas": [
-    {
-      "codigo": "3DYP",
-      "negocio": "Quatro Patas Pet Shop",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.167390-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/3DYP/"
-    },
-    {
-      "codigo": "JLQD",
-      "negocio": "Delibo Pet Shop",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.211617-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/JLQD/"
-    },
-    {
-      "codigo": "AFKK",
-      "negocio": "Amor Em Patas - Estética Canina e Felina-Hospedagem Ribeirão Preto",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.252183-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/AFKK/"
-    },
-    {
-      "codigo": "FBET",
-      "negocio": "Patas e Focinhos Pet Shop",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.294127-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/FBET/"
-    },
-    {
-      "codigo": "8X32",
-      "negocio": "Pelos & Pulos - Pet Shop Ribeirão Preto",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.333722-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/8X32/"
-    },
-    {
-      "codigo": "ARAW",
-      "negocio": "La Douche banho e tosa Pets",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.370357-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/ARAW/"
-    },
-    {
-      "codigo": "DJTQ",
-      "negocio": "Pet Shop Ribeirão",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.407421-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/DJTQ/"
-    },
-    {
-      "codigo": "GBS2",
-      "negocio": "Casa Dos Animais",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.444223-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/GBS2/"
-    },
-    {
-      "codigo": "5RXZ",
-      "negocio": "AgroPet Bonfim",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.480488-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/5RXZ/"
-    },
-    {
-      "codigo": "T53K",
-      "negocio": "My Pet Pet Shop (Thamiris Marçal) Ribeirão Preto",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.528607-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/T53K/"
-    },
-    {
-      "codigo": "6UGJ",
-      "negocio": "Teca Pet Shop e Veterinária",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.575443-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/6UGJ/"
-    },
-    {
-      "codigo": "8J8D",
-      "negocio": "Sammy Pet shop",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.619175-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/8J8D/"
-    },
-    {
-      "codigo": "J67A",
-      "negocio": "Oriente Pet Shop",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.663176-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/J67A/"
-    },
-    {
-      "codigo": "DLGM",
-      "negocio": "Doggi Estética Pet Banho e Tosa - Bonfim Paulista",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.709432-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/DLGM/"
-    },
-    {
-      "codigo": "XLUJ",
-      "negocio": "Entre Patas & Beijos - Banho e Tosa",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.757394-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/XLUJ/"
-    },
-    {
-      "codigo": "6Q3T",
-      "negocio": "Pet Shop LêPet",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.805613-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/6Q3T/"
-    },
-    {
-      "codigo": "TL8C",
-      "negocio": "Belo Cão banho e tosa",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.851928-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/TL8C/"
-    },
-    {
-      "codigo": "8XX3",
-      "negocio": "Duda e Dorys - Estética Animal - Banho e Tosa",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.899021-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/8XX3/"
-    },
-    {
-      "codigo": "5MKR",
-      "negocio": "Pet Lindos Banho e Tosa",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.942311-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/5MKR/"
-    },
-    {
-      "codigo": "PTGV",
-      "negocio": "Banho e Tosa Tchutchucão",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:25.991718-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/PTGV/"
-    },
-    {
-      "codigo": "TPHM",
-      "negocio": "Jardim Pet",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:26.039455-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/TPHM/"
-    },
-    {
-      "codigo": "XF73",
-      "negocio": "Pet Shop Vila Nova",
-      "cidade": "Franca",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:29.473142-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/XF73/"
-    },
-    {
-      "codigo": "7CXV",
-      "negocio": "Clínica Amigo Fiel",
-      "cidade": "Ribeirão Preto",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T13:11:29.534629-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/7CXV/"
-    },
-    {
-      "codigo": "KLB8",
-      "negocio": "Zoopet Shop and Care",
-      "cidade": "Avaré",
-      "nicho": "pet",
-      "gerada_em": "2026-09-23T18:20:30.059160-03:00",
-      "expira_em": "2026-09-30T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/KLB8/"
-    },
-    {
-      "codigo": "WBJ5",
-      "negocio": "Clínica Gathi Odontologia",
-      "cidade": "Uberlândia",
-      "nicho": "odonto",
-      "gerada_em": "2026-09-29T14:36:30.586980-03:00",
-      "expira_em": "2026-10-06T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/WBJ5/"
-    },
-    {
-      "codigo": "Q9MR",
-      "negocio": "Instituto Spaço Nobre",
-      "cidade": "Uberlândia",
-      "nicho": "odonto",
-      "gerada_em": "2026-09-29T15:19:07.775811-03:00",
-      "expira_em": "2026-10-06T23:59:59-03:00",
-      "url": "https://west007-vante.github.io/previa/Q9MR/"
-    }
-  ]
+ "previas": [
+  {
+   "codigo": "3DYP",
+   "negocio": "Quatro Patas Pet Shop",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.167390-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/3DYP/"
+  },
+  {
+   "codigo": "JLQD",
+   "negocio": "Delibo Pet Shop",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.211617-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/JLQD/"
+  },
+  {
+   "codigo": "AFKK",
+   "negocio": "Amor Em Patas - Estética Canina e Felina-Hospedagem Ribeirão Preto",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.252183-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/AFKK/"
+  },
+  {
+   "codigo": "FBET",
+   "negocio": "Patas e Focinhos Pet Shop",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.294127-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/FBET/"
+  },
+  {
+   "codigo": "8X32",
+   "negocio": "Pelos & Pulos - Pet Shop Ribeirão Preto",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.333722-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/8X32/"
+  },
+  {
+   "codigo": "ARAW",
+   "negocio": "La Douche banho e tosa Pets",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.370357-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/ARAW/"
+  },
+  {
+   "codigo": "DJTQ",
+   "negocio": "Pet Shop Ribeirão",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.407421-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/DJTQ/"
+  },
+  {
+   "codigo": "GBS2",
+   "negocio": "Casa Dos Animais",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.444223-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/GBS2/"
+  },
+  {
+   "codigo": "5RXZ",
+   "negocio": "AgroPet Bonfim",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.480488-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/5RXZ/"
+  },
+  {
+   "codigo": "T53K",
+   "negocio": "My Pet Pet Shop (Thamiris Marçal) Ribeirão Preto",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.528607-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/T53K/"
+  },
+  {
+   "codigo": "6UGJ",
+   "negocio": "Teca Pet Shop e Veterinária",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.575443-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/6UGJ/"
+  },
+  {
+   "codigo": "8J8D",
+   "negocio": "Sammy Pet shop",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.619175-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/8J8D/"
+  },
+  {
+   "codigo": "J67A",
+   "negocio": "Oriente Pet Shop",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.663176-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/J67A/"
+  },
+  {
+   "codigo": "DLGM",
+   "negocio": "Doggi Estética Pet Banho e Tosa - Bonfim Paulista",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.709432-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/DLGM/"
+  },
+  {
+   "codigo": "XLUJ",
+   "negocio": "Entre Patas & Beijos - Banho e Tosa",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.757394-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/XLUJ/"
+  },
+  {
+   "codigo": "6Q3T",
+   "negocio": "Pet Shop LêPet",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.805613-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/6Q3T/"
+  },
+  {
+   "codigo": "TL8C",
+   "negocio": "Belo Cão banho e tosa",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.851928-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/TL8C/"
+  },
+  {
+   "codigo": "8XX3",
+   "negocio": "Duda e Dorys - Estética Animal - Banho e Tosa",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.899021-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/8XX3/"
+  },
+  {
+   "codigo": "5MKR",
+   "negocio": "Pet Lindos Banho e Tosa",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.942311-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/5MKR/"
+  },
+  {
+   "codigo": "PTGV",
+   "negocio": "Banho e Tosa Tchutchucão",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:25.991718-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/PTGV/"
+  },
+  {
+   "codigo": "TPHM",
+   "negocio": "Jardim Pet",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:26.039455-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/TPHM/"
+  },
+  {
+   "codigo": "XF73",
+   "negocio": "Pet Shop Vila Nova",
+   "cidade": "Franca",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:29.473142-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/XF73/"
+  },
+  {
+   "codigo": "7CXV",
+   "negocio": "Clínica Amigo Fiel",
+   "cidade": "Ribeirão Preto",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T13:11:29.534629-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/7CXV/"
+  },
+  {
+   "codigo": "KLB8",
+   "negocio": "Zoopet Shop and Care",
+   "cidade": "Avaré",
+   "nicho": "pet",
+   "gerada_em": "2026-09-23T18:20:30.059160-03:00",
+   "expira_em": "2026-09-30T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/KLB8/"
+  },
+  {
+   "codigo": "WBJ5",
+   "negocio": "Clínica Gathi Odontologia",
+   "cidade": "Uberlândia",
+   "nicho": "odonto",
+   "gerada_em": "2026-09-29T14:36:30.586980-03:00",
+   "expira_em": "2026-10-06T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/WBJ5/"
+  },
+  {
+   "codigo": "Q9MR",
+   "negocio": "Instituto Spaço Nobre",
+   "cidade": "Uberlândia",
+   "nicho": "odonto",
+   "gerada_em": "2026-09-29T15:19:07.775811-03:00",
+   "expira_em": "2026-10-06T23:59:59-03:00",
+   "url": "https://west007-vante.github.io/previa/Q9MR/"
+  },
+  {
+   "codigo": "spaco-nobre",
+   "negocio": "Instituto Spaço Nobre",
+   "cidade": "Uberlândia",
+   "nicho": "clínica odontológica",
+   "gerada_em": "2026-09-29T16:25:30",
+   "tipo": "sob-medida",
+   "url": "https://west007-vante.github.io/previa/spaco-nobre/"
+  }
+ ]
 }
