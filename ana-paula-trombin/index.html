@@ -3,258 +3,220 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dra. Ana Paula Trombin · Invisalign, ortodontia e harmonização orofacial · São José do Rio Preto</title>
-<meta name="description" content="Dra. Ana Paula Trombin — ortodontia, odontologia, Invisalign e harmonização orofacial. Av. Romeu Strazzi, 325, Sala 418 — Vila Sinibaldi, São José do Rio Preto-SP.">
+<title>Dra. Ana Paula Trombin · Ortodontia, Invisalign e harmonização orofacial · São José do Rio Preto</title>
+<meta name="description" content="Dra. Ana Paula Trombin — ortodontia, odontologia, Invisalign e harmonização orofacial em São José do Rio Preto-SP. Av. Romeu Strazzi, 325, sala 418.">
 <meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ECE5DB">
+<link rel="preload" as="image" href="assets/seq/a001.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="topo" id="topo">
+<header class="topo">
+  <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-risco" aria-hidden="true"></span><span class="menu-rotulo">Menu</span></button>
   <a class="marca" href="#inicio" aria-label="Dra. Ana Paula Trombin — início">
-    <span class="marca-nome">Ana Paula <em>Trombin</em></span>
-    <span class="marca-sub">Ortodontia · Harmonização orofacial</span>
+    <span class="marca-nome">Ana Paula Trombin</span>
+    <span class="marca-sub">Ortodontia · Harmonização</span>
   </a>
-  <nav class="topo-nav" aria-label="Seções">
-    <a href="#historia">A Dra.</a>
-    <a href="#tratamentos">Tratamentos</a>
-    <a href="#frases">Nas palavras dela</a>
-    <a href="#duvidas">Dúvidas</a>
-  </nav>
-  <span class="selo-previa" aria-label="Esta página é uma prévia">Prévia</span>
-  <a class="botao botao-topo" href="https://wa.me/5517996299995?text=Ol%C3%A1%2C%20Dra.%20Ana%20Paula%21%20Vi%20a%20pr%C3%A9via%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
+  <a class="botao botao-topo" data-zap href="#">Agendar</a>
 </header>
+
+<!-- o menu de tela cheia é montado pelo site.js no primeiro clique em "Menu" -->
 
 <main id="conteudo">
 
-<!-- 1 · ENTRADA: arte desenhada no canvas — o arco que se alinha com a rolagem -->
+<!-- 1 · ENTRADA (tela dividida): vídeo real dela no consultório (post /p/DdJZONjOPiv/, 0–12 s) em 120 quadros webp,
+     fixo numa metade; título e passos rolam na outra -->
 <section class="entrada" id="inicio" aria-label="Entrada">
-  <div class="entrada-pin">
-    <canvas id="arco" aria-label="Arte ilustrativa: peças de um arco dental que se alinham conforme a página rola"></canvas>
-    <p class="selo-arte">Arte ilustrativa · não é foto do consultório</p>
-
-    <div class="entrada-texto">
-      <div class="passo passo-1">
-        <p class="rotulo">São José do Rio Preto · SP</p>
-        <h1 class="titulo-xl">Dra. Ana Paula <em>Trombin</em></h1>
-        <p class="entrada-sub">Ortodontia, odontologia, Invisalign e harmonização orofacial.</p>
-      </div>
-      <div class="passo passo-2">
-        <p class="rotulo">Invisalign</p>
-        <p class="titulo-l">“Parece apenas uma placa transparente, né? <em>Mas existe um tratamento ortodôntico inteiro acontecendo ali.</em>”</p>
-      </div>
-      <div class="passo passo-3">
-        <p class="rotulo">O propósito</p>
-        <p class="titulo-l">“Resultados naturais, responsáveis e que façam sentido <em>para cada paciente.</em>”</p>
-      </div>
+  <div class="tela">
+    <img class="tela-poster" src="assets/seq/a001.webp" alt="" aria-hidden="true" width="720" height="840" fetchpriority="high">
+    <canvas id="tour" width="720" height="840" aria-label="Vídeo da Dra. Ana Paula Trombin falando no consultório"></canvas>
+    <p class="tela-legenda" aria-hidden="true">No consultório · São José do Rio Preto</p>
+  </div>
+  <div class="passos">
+    <div class="passo">
+      <p class="rotulo">Ortodontia · Invisalign · Harmonização orofacial</p>
+      <h1 class="titulo-xl">Dra. Ana Paula <em>Trombin</em></h1>
+      <p class="passo-sub">Consultório na Av. Romeu Strazzi, 325 · Sala 418 · São José do Rio Preto-SP</p>
+      <p class="passo-rola" aria-hidden="true">Role para conhecer</p>
     </div>
-
-    <ol class="etapas-arco" aria-label="Etapas do tratamento">
-      <li>Diagnóstico</li><li>Planejamento</li><li>Acompanhamento</li><li>Ajustes</li>
-    </ol>
-    <p class="rolar" aria-hidden="true"><span></span>role para alinhar</p>
-  </div>
-</section>
-
-<!-- 1b · MUITO PRAZER: ela, em vídeo real, logo depois da entrada -->
-<section class="historia" id="historia" aria-label="A Dra. Ana Paula Trombin">
-  <figure class="historia-video">
-    <video muted playsinline loop preload="none" data-poster="assets/vid/historia.webp" data-src="assets/vid/historia.mp4" aria-label="Dra. Ana Paula Trombin falando no consultório"></video>
-  </figure>
-  <div class="historia-texto">
-    <p class="rotulo">Muito prazer</p>
-    <h2 class="titulo-l">“Sou a Dra. Ana Paula Trombin e começo este espaço para compartilhar um pouco mais sobre o meu trabalho <em>e, principalmente, sobre o cuidado.</em>”</h2>
-    <p class="historia-p">“Ortodontia, odontologia, invisalign e harmonização orofacial caminham por aqui com o mesmo propósito: buscar resultados naturais, responsáveis e que façam sentido para cada paciente.” <a class="fonte" href="https://www.instagram.com/p/DcUFBEHBXQ0/" target="_blank" rel="noopener">ver o vídeo</a></p>
-    <div class="historia-fotos">
-      <img class="hf hf-1" src="assets/img/varanda.webp" alt="Dra. Ana Paula Trombin em pé numa varanda com plantas" width="1000" height="1014" loading="lazy">
-      <img class="hf hf-2" src="assets/img/fimdeano.webp" alt="Dra. Ana Paula Trombin sorrindo, sentada ao ar livre" width="1000" height="910" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- 2 · MANIFESTO: palavras dela, preenchidas pela rolagem -->
-<section class="manifesto" aria-label="Manifesto">
-  <p class="rotulo">Como ela conduz</p>
-  <p class="manifesto-texto" data-letras>Meu papel não é simplesmente executar um pedido, mas avaliar, orientar e mostrar com clareza o que realmente pode te trazer um bom resultado.</p>
-  <p class="assinatura">— Dra. Ana Paula Trombin · <a class="fonte" href="https://www.instagram.com/p/Dcn_qV_hZyL/" target="_blank" rel="noopener">ler o post</a></p>
-</section>
-
-<!-- 3 · DETALHE: a janela de luz abre até a tela cheia -->
-<section class="detalhe" aria-label="Antes de qualquer tratamento">
-  <div class="detalhe-pin">
-    <figure class="detalhe-janela">
-      <img src="assets/arte/luz.svg" alt="Arte ilustrativa: halo de luz cobre e linhas de contorno" width="1600" height="1000">
-    </figure>
-    <p class="detalhe-topo">Antes de qualquer tratamento, existe uma etapa indispensável:</p>
-    <ul class="detalhe-palavras" aria-label="A etapa indispensável">
-      <li>Avaliação.</li><li>Planejamento.</li><li class="ind">Indicação individualizada.</li>
-    </ul>
-    <p class="detalhe-legenda">“A naturalidade vem do resultado de conhecimento e planejamento.”</p>
-    <p class="selo-arte selo-claro">Arte ilustrativa · não é foto do consultório</p>
-  </div>
-</section>
-
-<!-- 4 · TRATAMENTOS: coluna fixa; o traço de cada área se desenha quando ela entra -->
-<section class="tratamentos" id="tratamentos" aria-label="Tratamentos">
-  <div class="trat-arte">
-    <div class="trat-quadro">
-      <video data-t="0" class="tm on" muted playsinline loop preload="none" data-poster="assets/vid/invisalign.webp" data-src="assets/vid/invisalign.mp4" aria-label="Dra. Ana Paula falando sobre Invisalign à mesa do consultório"></video>
-      <img data-t="1" class="tm" src="assets/img/adulta.webp" alt="Dra. Ana Paula sentada na poltrona do consultório" width="1000" height="818" loading="lazy">
-      <img data-t="2" class="tm" src="assets/img/avaliacao.webp" alt="Dra. Ana Paula no consultório" width="1000" height="1210" loading="lazy">
-      <video data-t="3" class="tm" muted playsinline loop preload="none" data-poster="assets/vid/harmonizacao.webp" data-src="assets/vid/harmonizacao.mp4" aria-label="Dra. Ana Paula falando sobre harmonização facial no consultório"></video>
-      <img data-t="4" class="tm" src="assets/img/ultraformer.webp" alt="Dra. Ana Paula sentada numa varanda, com café na mesa" width="1000" height="1138" loading="lazy">
-      <img data-t="5" class="tm" src="assets/img/microagulhamento.webp" alt="Dra. Ana Paula sentada numa varanda com plantas" width="1000" height="960" loading="lazy">
-    </div>
-  </div>
-  <div class="trat-texto">
-    <p class="rotulo">Tratamentos</p>
-    <h2 class="titulo-l">Ortodontia, odontologia, Invisalign e harmonização orofacial, <em>com o mesmo propósito.</em></h2>
-    <article class="capitulo" data-t="0">
-      <figure class="cap-midia"><video class="" muted playsinline loop preload="none" data-poster="assets/vid/invisalign.webp" data-src="assets/vid/invisalign.mp4" aria-label="Dra. Ana Paula falando sobre Invisalign à mesa do consultório"></video></figure>
-      <span class="num">01</span>
-      <h3>Invisalign</h3>
-      <p>“No Invisalign, cada alinhador faz parte de uma sequência planejada para promover movimentações específicas nos dentes ao longo do tratamento.”</p>
-      <a class="fonte" href="https://www.instagram.com/p/Dc3aw42h7XG/" target="_blank" rel="noopener">ler o post</a>
-    </article>
-    <article class="capitulo" data-t="1">
-      <figure class="cap-midia"><img class="" src="assets/img/adulta.webp" alt="Dra. Ana Paula sentada na poltrona do consultório" width="1000" height="818" loading="lazy"></figure>
-      <span class="num">02</span>
-      <h3>Ortodontia na fase adulta</h3>
-      <p>“Na fase adulta, a ortodontia pode ajudar a corrigir desalinhamentos, melhorar a mordida (oclusão), facilitar a mastigação, higienização e trazer mais equilíbrio para o sorriso.”</p>
-      <a class="fonte" href="https://www.instagram.com/p/DckhJVKu9mT/" target="_blank" rel="noopener">ler o post</a>
-    </article>
-    <article class="capitulo" data-t="2">
-      <figure class="cap-midia"><img class="" src="assets/img/avaliacao.webp" alt="Dra. Ana Paula no consultório" width="1000" height="1210" loading="lazy"></figure>
-      <span class="num">03</span>
-      <h3>Acompanhamento, da infância à contenção</h3>
-      <p>“Na infância, uma avaliação ortodôntica por volta dos 5 anos pode ajudar a observar como a mordida, os dentes e a face estão se desenvolvendo, sem significar, necessariamente, que a criança precisará usar aparelho naquele momento.”</p>
-      <a class="fonte" href="https://www.instagram.com/p/DdgpvvthLkx/" target="_blank" rel="noopener">ler o post</a>
-    </article>
-    <article class="capitulo" data-t="3">
-      <figure class="cap-midia"><video class="" muted playsinline loop preload="none" data-poster="assets/vid/harmonizacao.webp" data-src="assets/vid/harmonizacao.mp4" aria-label="Dra. Ana Paula falando sobre harmonização facial no consultório"></video></figure>
-      <span class="num">04</span>
-      <h3>Harmonização orofacial</h3>
-      <p>“Harmonização facial é muito sobre saber observar. Entender proporções, características, movimentos e necessidades.”</p>
-      <a class="fonte" href="https://www.instagram.com/p/DdJZONjOPiv/" target="_blank" rel="noopener">ler o post</a>
-    </article>
-    <article class="capitulo" data-t="4">
-      <figure class="cap-midia"><img class="" src="assets/img/ultraformer.webp" alt="Dra. Ana Paula sentada numa varanda, com café na mesa" width="1000" height="1138" loading="lazy"></figure>
-      <span class="num">05</span>
-      <h3>Ultraformer</h3>
-      <p>“Quando existe indicação para trabalhar firmeza e sustentação, o ultrassom focalizado pode ser uma ferramenta importante dentro do planejamento.”</p>
-      <a class="fonte" href="https://www.instagram.com/p/DeSZa3BOdCe/" target="_blank" rel="noopener">ler o post</a>
-    </article>
-    <article class="capitulo" data-t="5">
-      <figure class="cap-midia"><img class="" src="assets/img/microagulhamento.webp" alt="Dra. Ana Paula sentada numa varanda com plantas" width="1000" height="960" loading="lazy"></figure>
-      <span class="num">06</span>
-      <h3>Microagulhamento</h3>
-      <p>“O objetivo é provocar um estímulo controlado, capaz de iniciar os processos de reparação e remodelação da pele.”</p>
-      <a class="fonte" href="https://www.instagram.com/p/DeBA2pyuXqV/" target="_blank" rel="noopener">ler o post</a>
-    </article>
-  </div>
-</section>
-
-<!-- faixa: as três palavras dela, correndo com a rolagem -->
-<div class="faixa" aria-hidden="true"><div class="faixa-trilho"><span>critério</span><i></i><span>clareza</span><i></i><span>responsabilidade</span><i></i><span>critério</span><i></i><span>clareza</span><i></i><span>responsabilidade</span><i></i><span>critério</span><i></i><span>clareza</span><i></i><span>responsabilidade</span><i></i></div></div>
-
-<!-- 5 · FRASES: trilho horizontal fixado, cada frase com o post de origem -->
-<section class="frases" id="frases" aria-label="Nas palavras dela">
-  <div class="frases-pin">
-    <div class="frases-cabeca">
+    <div class="passo">
       <p class="rotulo">Nas palavras dela</p>
-      <h2 class="titulo-l">Com critério, clareza <em>e responsabilidade.</em></h2>
+      <p class="titulo-l">Antes de qualquer tratamento, existe uma etapa indispensável: <em>avaliação, planejamento e indicação individualizada.</em></p>
+      <a class="fonte" href="https://www.instagram.com/p/DdJZONjOPiv/" target="_blank" rel="noopener">legenda do vídeo</a>
     </div>
-    <div class="trilho" id="trilho">
-      <blockquote class="frase"><span class="num">01</span><p>“Tecnologia nenhuma substitui diagnóstico.”</p><a class="fonte" href="https://www.instagram.com/p/DeSZa3BOdCe/" target="_blank" rel="noopener">sobre Ultraformer</a></blockquote>
-      <blockquote class="frase"><span class="num">02</span><p>“A discrição é uma das vantagens, mas quem conduz o tratamento é a Ortodontista, junto com a colaboração de uso do paciente.”</p><a class="fonte" href="https://www.instagram.com/p/Dc3aw42h7XG/" target="_blank" rel="noopener">sobre Invisalign</a></blockquote>
-      <blockquote class="frase"><span class="num">03</span><p>“Dependendo do caso, a melhor indicação é fazer diferente, ou fazer menos, ou até não fazer agora.”</p><a class="fonte" href="https://www.instagram.com/p/Dcn_qV_hZyL/" target="_blank" rel="noopener">sobre a avaliação</a></blockquote>
-      <blockquote class="frase"><span class="num">04</span><p>“Não se trata de ‘agredir para estimular colágeno’. Trata-se de saber quanto estimular, onde estimular e como conduzir essa pele depois do procedimento.”</p><a class="fonte" href="https://www.instagram.com/p/DeBA2pyuXqV/" target="_blank" rel="noopener">sobre microagulhamento</a></blockquote>
-      <blockquote class="frase"><span class="num">05</span><p>“Na Ortodontia, mais importante do que tratar cedo ou tarde é saber avaliar no momento adequado.”</p><a class="fonte" href="https://www.instagram.com/p/DdgpvvthLkx/" target="_blank" rel="noopener">sobre acompanhamento</a></blockquote>
-      <blockquote class="frase"><span class="num">06</span><p>“Tratar ‘flacidez’ sem entender sua origem é tentar corrigir o efeito sem investigar a causa.”</p><a class="fonte" href="https://www.instagram.com/p/DeSZa3BOdCe/" target="_blank" rel="noopener">sobre flacidez</a></blockquote>
-      <blockquote class="frase"><span class="num">07</span><p>“Muita gente passou anos acreditando que aparelho era ‘coisa de adolescente’.”</p><a class="fonte" href="https://www.instagram.com/p/DckhJVKu9mT/" target="_blank" rel="noopener">sobre ortodontia adulta</a></blockquote>
+    <div class="passo">
+      <p class="rotulo">5,0 · 63 avaliações no Google (30/09/2026)</p>
+      <p class="titulo-l">Quer entender quais possibilidades <em>fazem sentido para o seu caso?</em></p>
+      <a class="botao botao-cheio" data-zap href="#">Agendar avaliação no WhatsApp</a>
     </div>
   </div>
 </section>
 
-<!-- 6 · CALENDÁRIO: novembro vira dezembro conforme rola -->
-<section class="calendario" aria-label="Planejar com tempo">
-  <div class="cal-pin">
-    <p class="rotulo">Para o fim de ano</p>
-    <div class="cal-meses" aria-hidden="true">
-      <span class="mes mes-nov">novembro</span>
-      <span class="mes mes-dez"><em>dezembro</em></span>
+<!-- 2 · GALERIA (grade que aproxima): fotos e quadros reais dela; a do centro abre até a tela cheia -->
+<section class="galeria" id="consultorio" aria-label="Por dentro">
+  <div class="galeria-pin">
+    <div class="galeria-cabeca">
+      <p class="rotulo">Por dentro</p>
+      <h2 class="titulo-l">O consultório e quem <em>vai cuidar de você.</em></h2>
     </div>
-    <p class="cal-frase">“O resultado que você deseja para dezembro pode precisar começar a ser planejado em novembro.”</p>
-    <p class="cal-texto">“Nem todos os procedimentos entregam resultados imediatos. Alguns precisam de dias para acomodação, outros exigem um período de recuperação e há tratamentos cujos efeitos aparecem gradualmente, ao longo de semanas ou meses.” <a class="fonte" href="https://www.instagram.com/p/DfIYon7O109/" target="_blank" rel="noopener">ler o post</a></p>
+    <div class="grade">
+      <figure class="g"><img src="assets/img/varanda.webp" alt="Dra. Ana Paula na varanda do prédio" width="1000" height="1014" loading="lazy"></figure>
+      <figure class="g"><img src="assets/vid/historia.webp" alt="Dra. Ana Paula sentada na poltrona do consultório" width="720" height="742" loading="lazy"></figure>
+      <figure class="g"><img src="assets/img/retrato.webp" alt="Dra. Ana Paula em retrato no consultório" width="1000" height="1084" loading="lazy"></figure>
+      <figure class="g"><img src="assets/vid/invisalign.webp" alt="Dra. Ana Paula à mesa, explicando o Invisalign" width="720" height="860" loading="lazy"></figure>
+      <figure class="g g-centro"><img src="assets/img/fimdeano.webp" alt="Dra. Ana Paula sorrindo, em foto publicada no perfil dela" width="1000" height="910" loading="lazy"></figure>
+      <figure class="g"><img src="assets/vid/harmonizacao.webp" alt="Dra. Ana Paula na sala com a estante iluminada" width="720" height="768" loading="lazy"></figure>
+      <figure class="g"><img src="assets/img/acompanha.webp" alt="Dra. Ana Paula no consultório, parede de mármore ao fundo" width="720" height="742" loading="lazy"></figure>
+      <figure class="g"><img src="assets/img/ajustes.webp" alt="Dra. Ana Paula à mesa do consultório" width="720" height="860" loading="lazy"></figure>
+      <figure class="g"><img src="assets/vid/convite.webp" alt="Dra. Ana Paula se despedindo no vídeo de apresentação" width="720" height="742" loading="lazy"></figure>
+    </div>
+    <p class="galeria-fim">“Sejam muito bem-vindos!”<span>— do vídeo de apresentação, <a href="https://www.instagram.com/p/DcUFBEHBXQ0/" target="_blank" rel="noopener">post original</a></span></p>
   </div>
 </section>
 
-<!-- 7 · DÚVIDAS: as respostas saem das legendas dela -->
-<section class="duvidas" id="duvidas" aria-label="Dúvidas frequentes">
+<!-- 3 · QUEM É ELA (foto fixa, texto rola) -->
+<section class="quem" id="quem" aria-label="Quem é ela">
+  <div class="quem-foto"><figure><img src="assets/img/avaliacao.webp" alt="Dra. Ana Paula Trombin no consultório" width="1000" height="1210" loading="lazy"></figure></div>
+  <div class="quem-texto">
+    <p class="rotulo">Muito prazer</p>
+    <h2 class="titulo-l">“Hoje quero me <em>apresentar melhor!”</em></h2>
+    <p class="quem-p">“Sou a Dra. Ana Paula Trombin e começo este espaço para compartilhar um pouco mais sobre o meu trabalho e principalmente, sobre o cuidado que quero oferecer a cada pessoa que confia em mim.”</p>
+    <p class="quem-p">“Ortodontia, odontologia, invisalign e harmonização orofacial caminham por aqui com o mesmo propósito: <em>buscar resultados naturais, responsáveis e que façam sentido para cada paciente.</em>”</p>
+    <p class="quem-p">“A gente sempre começa pelo motivo que trouxe você até meu consultório. Muitas vezes, aquilo que parece ser ‘a solução’ é só a primeira ideia.”</p>
+    <p class="quem-p">“Meu papel não é simplesmente executar um pedido, mas avaliar, orientar e mostrar com clareza o que realmente pode te trazer um bom resultado.”</p>
+    <p class="quem-p">“É assim que eu acredito que um tratamento deve ser conduzido: <em>com critério, clareza e responsabilidade.</em>”</p>
+    <p class="quem-fontes">Trechos dos posts <a href="https://www.instagram.com/p/DcUFBEHBXQ0/" target="_blank" rel="noopener">de apresentação</a> e <a href="https://www.instagram.com/p/Dcn_qV_hZyL/" target="_blank" rel="noopener">“Procedimento não vem antes do diagnóstico”</a>.</p>
+  </div>
+</section>
+
+<!-- 4 · DÚVIDAS (acordeão): perguntas que ela mesma fez nos posts, com a resposta dela -->
+<section class="duvidas" id="duvidas" aria-label="Dúvidas">
   <div class="duvidas-cabeca">
-    <p class="rotulo">Dúvidas</p>
-    <h2 class="titulo-l">Perguntas que ela <em>já respondeu.</em></h2>
-    <p class="nota-fonte">Cada resposta é um trecho publicado pela Dra. Ana Paula no Instagram.</p>
+    <p class="rotulo">O que ela responde</p>
+    <h2 class="titulo-l">Dúvidas que chegam <em>ao consultório.</em></h2>
+    <p class="nota-fonte">Cada resposta é um trecho do post dela sobre o tema.</p>
   </div>
-  <div class="lista-duvidas">
+  <div class="duvidas-lista">
     <details>
-      <summary>Invisalign é só colocar a placa e esperar?</summary>
-      <p>“Não é simplesmente colocar uma placa e esperar o sorriso alinhar. Existe diagnóstico, planejamento, acompanhamento e ajustes de acordo com cada caso.” <a class="fonte" href="https://www.instagram.com/p/Dc3aw42h7XG/" target="_blank" rel="noopener">post</a></p>
+      <summary>Aparelho não é “coisa de adolescente”?</summary>
+      <div class="resposta"><p>“Muita gente passou anos acreditando que aparelho era ‘coisa de adolescente’. E acabou adiando um cuidado que poderia fazer diferença não só na estética, mas também na saúde do sorriso.”</p><a class="fonte" href="https://www.instagram.com/p/DckhJVKu9mT/" target="_blank" rel="noopener">post sobre ortodontia na fase adulta</a></div>
     </details>
     <details>
-      <summary>Terminei o aparelho. Acabou?</summary>
-      <p>“O tratamento ortodôntico pode terminar, mas o acompanhamento do sorriso, não necessariamente. Os dentes continuam sujeitos a movimentações ao longo da vida e é justamente por isso que a contenção e as avaliações periódicas têm um papel tão importante na manutenção do resultado.” <a class="fonte" href="https://www.instagram.com/p/DdgpvvthLkx/" target="_blank" rel="noopener">post</a></p>
+      <summary>Usou aparelho a vida toda e seus dentes entortaram novamente?</summary>
+      <div class="resposta"><p>“Os dentes continuam sujeitos a movimentações ao longo da vida e é justamente por isso que a contenção e as avaliações periódicas têm um papel tão importante na manutenção do resultado.”</p><a class="fonte" href="https://www.instagram.com/p/DdgpvvthLkx/" target="_blank" rel="noopener">post sobre contenção</a></div>
     </details>
     <details>
-      <summary>Tenho medo de ficar artificial com a harmonização.</summary>
-      <p>“Antes de qualquer tratamento, existe uma etapa indispensável: avaliação, planejamento e indicação individualizada. A naturalidade vem do resultado de conhecimento e planejamento.” <a class="fonte" href="https://www.instagram.com/p/DdJZONjOPiv/" target="_blank" rel="noopener">post</a></p>
+      <summary>Com que idade a criança deve passar por uma avaliação ortodôntica?</summary>
+      <div class="resposta"><p>“Na infância, uma avaliação ortodôntica por volta dos 5 anos pode ajudar a observar como a mordida, os dentes e a face estão se desenvolvendo, sem significar, necessariamente, que a criança precisará usar aparelho naquele momento.”</p><a class="fonte" href="https://www.instagram.com/p/DdgpvvthLkx/" target="_blank" rel="noopener">post sobre acompanhamento</a></div>
+    </details>
+    <details>
+      <summary>O Invisalign é só colocar uma placa?</summary>
+      <div class="resposta"><p>“Não é simplesmente colocar uma placa e esperar o sorriso alinhar. Existe diagnóstico, planejamento, acompanhamento e ajustes de acordo com cada caso.”</p><a class="fonte" href="https://www.instagram.com/p/Dc3aw42h7XG/" target="_blank" rel="noopener">post sobre Invisalign</a></div>
+    </details>
+    <details>
+      <summary>Medo da harmonização facial?</summary>
+      <div class="resposta"><p>“Harmonização facial é muito sobre saber observar. Entender proporções, características, movimentos e necessidades.” “A naturalidade vem do resultado de conhecimento e planejamento.”</p><a class="fonte" href="https://www.instagram.com/p/DdJZONjOPiv/" target="_blank" rel="noopener">post sobre harmonização</a></div>
     </details>
     <details>
       <summary>No microagulhamento, quanto mais intenso, melhor?</summary>
-      <p>“Mais profundidade, mais vermelhidão ou até sangramento não significam, necessariamente, que a pele foi melhor tratada.” <a class="fonte" href="https://www.instagram.com/p/DeBA2pyuXqV/" target="_blank" rel="noopener">post</a></p>
+      <div class="resposta"><p>“Mais profundidade, mais vermelhidão ou até sangramento não significam, necessariamente, que a pele foi melhor tratada.” “Trata-se de saber quanto estimular, onde estimular e como conduzir essa pele depois do procedimento.”</p><a class="fonte" href="https://www.instagram.com/p/DeBA2pyuXqV/" target="_blank" rel="noopener">post sobre microagulhamento</a></div>
     </details>
     <details>
-      <summary>O Ultraformer resolve qualquer flacidez?</summary>
-      <p>“O Ultraformer pode fazer muito sentido para determinados pacientes e não ser a resposta principal para outros. Antes de escolher o aparelho, precisamos entender o que está produzindo aquela mudança que você vê no espelho.” <a class="fonte" href="https://www.instagram.com/p/DeSZa3BOdCe/" target="_blank" rel="noopener">post</a></p>
+      <summary>Procedimentos em fim de ano: ainda dá tempo?</summary>
+      <div class="resposta"><p>“Nem todos os procedimentos entregam resultados imediatos. Alguns precisam de dias para acomodação, outros exigem um período de recuperação e há tratamentos cujos efeitos aparecem gradualmente, ao longo de semanas ou meses.” “O resultado que você deseja para dezembro pode precisar começar a ser planejado em novembro.”</p><a class="fonte" href="https://www.instagram.com/p/DfIYon7O109/" target="_blank" rel="noopener">post sobre fim de ano</a></div>
     </details>
   </div>
 </section>
 
-<!-- 8 · CONFIANÇA: nota pública + Instagram (sem embed: só link) -->
-<section class="confianca" aria-label="Avaliações e Instagram">
-  <div class="google">
-    <p class="rotulo">No Google</p>
-    <p class="nota"><span>5,0</span><small>de 5</small></p>
-    <p class="google-sub">63 avaliações no Google (30/09/2026)</p>
-    <a class="link-seta" href="https://www.google.com/maps/search/?api=1&amp;query=Dra.%20Ana%20Paula%20Trombin&amp;query_place_id=ChIJMdbFcm2zvZQR9BpM1UuCQHY" target="_blank" rel="noopener">Ver no Google Maps</a>
-  </div>
-  <div class="insta">
-    <p class="rotulo">Siga no Instagram</p>
-    <!-- FOTO REAL: retrato publicado no perfil (post DcUFBEHBXQ0) -->
-    <img class="insta-foto" src="assets/img/retrato.webp" alt="Dra. Ana Paula Trombin sentada na poltrona do consultório" width="1000" height="1084" loading="lazy">
-    <p class="insta-arroba">@draanapaulatrombin</p>
-    <p class="insta-sub">Os vídeos dela explicando cada tratamento estão no perfil oficial.</p>
-    <a class="link-seta" href="https://www.instagram.com/draanapaulatrombin/" target="_blank" rel="noopener">Abrir o perfil</a>
+<!-- 5 · FALA (destaque gigante): frase dela sobre foto real escurecida, palavra por palavra -->
+<section class="fala" aria-label="Fala da Dra. Ana Paula">
+  <div class="fala-pin">
+    <img class="fala-fundo" src="assets/img/fala.webp" alt="" aria-hidden="true" width="720" height="840" loading="lazy">
+    <blockquote class="fala-texto">
+      <p data-palavras>Tecnologia nenhuma substitui diagnóstico.</p>
+      <footer>Dra. Ana Paula Trombin, <a href="https://www.instagram.com/p/DeSZa3BOdCe/" target="_blank" rel="noopener">no Instagram</a></footer>
+    </blockquote>
   </div>
 </section>
 
-<!-- 9 · CONVITE FINAL -->
-<section class="convite" id="agendar" aria-label="Agendar">
-  <video class="convite-fundo" muted playsinline loop preload="none" data-poster="assets/vid/convite.webp" data-src="assets/vid/convite.mp4" aria-hidden="true"></video>
-  <div class="convite-texto">
-    <p class="rotulo">Agende sua avaliação</p>
-    <h2 class="titulo-xl">“A gente sempre começa pelo motivo que trouxe <em>você até meu consultório.</em>”</h2>
-    <a class="botao botao-grande" href="https://wa.me/5517996299995?text=Ol%C3%A1%2C%20Dra.%20Ana%20Paula%21%20Vi%20a%20pr%C3%A9via%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Conversar no WhatsApp</a>
+<!-- 6 · TRATAMENTOS (lista + foto que segue o cursor; no celular a foto aparece sob o item) -->
+<section class="tratamentos" id="tratamentos" aria-label="O que ela trata">
+  <div class="trat-cabeca">
+    <p class="rotulo">O que ela trata</p>
+    <h2 class="titulo-l">Seis cuidados, <em>um mesmo critério.</em></h2>
+  </div>
+  <ol class="trat-lista">
+    <li class="trat" data-img="assets/img/alinhador.webp">
+      <span class="num">01</span>
+      <h3>Invisalign</h3>
+      <img class="trat-foto" src="assets/img/alinhador.webp" alt="Dra. Ana Paula mostrando um alinhador" width="720" height="860" loading="lazy">
+      <p>“Parece apenas uma placa transparente, né? Mas existe um tratamento ortodôntico inteiro acontecendo ali.” <a class="fonte" href="https://www.instagram.com/p/Dc3aw42h7XG/" target="_blank" rel="noopener">ver o post</a></p>
+    </li>
+    <li class="trat" data-img="assets/img/adulta.webp">
+      <span class="num">02</span>
+      <h3>Ortodontia adulta</h3>
+      <img class="trat-foto" src="assets/img/adulta.webp" alt="Dra. Ana Paula, capa do post sobre ortodontia adulta" width="1000" height="556" loading="lazy">
+      <p>“Na fase adulta, a ortodontia pode ajudar a corrigir desalinhamentos, melhorar a mordida (oclusão), facilitar a mastigação, higienização e trazer mais equilíbrio para o sorriso.” <a class="fonte" href="https://www.instagram.com/p/DckhJVKu9mT/" target="_blank" rel="noopener">ver o post</a></p>
+    </li>
+    <li class="trat" data-img="assets/img/contencao.webp">
+      <span class="num">03</span>
+      <h3>Contenção e infância</h3>
+      <img class="trat-foto" src="assets/img/contencao.webp" alt="Dra. Ana Paula, capa do post sobre contenção" width="1000" height="818" loading="lazy">
+      <p>“Na Ortodontia, mais importante do que tratar cedo ou tarde é saber avaliar no momento adequado.” <a class="fonte" href="https://www.instagram.com/p/DdgpvvthLkx/" target="_blank" rel="noopener">ver o post</a></p>
+    </li>
+    <li class="trat" data-img="assets/img/harmonizacao.webp">
+      <span class="num">04</span>
+      <h3>Harmonização facial</h3>
+      <img class="trat-foto" src="assets/img/harmonizacao.webp" alt="Dra. Ana Paula falando sobre harmonização facial" width="720" height="840" loading="lazy">
+      <p>“Antes de qualquer tratamento, existe uma etapa indispensável: avaliação, planejamento e indicação individualizada.” <a class="fonte" href="https://www.instagram.com/p/DdJZONjOPiv/" target="_blank" rel="noopener">ver o post</a></p>
+    </li>
+    <li class="trat" data-img="assets/img/ultraformer.webp">
+      <span class="num">05</span>
+      <h3>Ultraformer</h3>
+      <img class="trat-foto" src="assets/img/ultraformer.webp" alt="Dra. Ana Paula, capa do post sobre Ultraformer" width="1000" height="1138" loading="lazy">
+      <p>“Quando existe indicação para trabalhar firmeza e sustentação, o ultrassom focalizado pode ser uma ferramenta importante dentro do planejamento.” <a class="fonte" href="https://www.instagram.com/p/DeSZa3BOdCe/" target="_blank" rel="noopener">ver o post</a></p>
+    </li>
+    <li class="trat" data-img="assets/img/microagulhamento.webp">
+      <span class="num">06</span>
+      <h3>Microagulhamento</h3>
+      <img class="trat-foto" src="assets/img/microagulhamento.webp" alt="Dra. Ana Paula, capa do post sobre microagulhamento" width="1000" height="960" loading="lazy">
+      <p>“O objetivo é provocar um estímulo controlado, capaz de iniciar os processos de reparação e remodelação da pele.” <a class="fonte" href="https://www.instagram.com/p/DeBA2pyuXqV/" target="_blank" rel="noopener">ver o post</a></p>
+    </li>
+  </ol>
+  <figure class="cursor-foto" aria-hidden="true"><img src="assets/img/alinhador.webp" alt="" width="720" height="860"></figure>
+</section>
+
+<!-- 7 · PROVA (números com fonte, contando): ela não publicou avaliações de pacientes, por isso não há trechos -->
+<section class="prova" aria-label="No Google">
+  <p class="rotulo">No Google</p>
+  <div class="numeros">
+    <div class="n"><p class="n-valor"><span data-conta="5" data-casas="1">5,0</span></p><p class="n-desc">nota no Google</p></div>
+    <div class="n"><p class="n-valor"><span data-conta="63">63</span></p><p class="n-desc">avaliações publicadas no Google</p></div>
+    <div class="n"><p class="n-valor"><span data-conta="4">4</span></p><p class="n-desc">frentes de cuidado: ortodontia, odontologia, Invisalign e harmonização orofacial</p></div>
+  </div>
+  <p class="nota-fonte">Nota e número de avaliações medidos em 30/09/2026 · <a data-mapa href="#" target="_blank" rel="noopener">ver no Google Maps</a> · frentes de cuidado: <a href="https://www.instagram.com/p/DcUFBEHBXQ0/" target="_blank" rel="noopener">post de apresentação</a></p>
+</section>
+
+<!-- 8 · FECHAMENTO (vídeo real em tela cheia com o WhatsApp por cima) -->
+<section class="fechamento" id="agendar" aria-label="Como agendar">
+  <video class="fechamento-fundo" muted playsinline loop preload="none" data-poster="assets/vid/convite.webp" data-src="assets/vid/convite.mp4" aria-hidden="true"></video>
+  <div class="fechamento-texto">
+    <p class="rotulo">Como agendar</p>
+    <h2 class="titulo-xl">Agende sua <em>avaliação.</em></h2>
+    <p class="fechamento-sub">Mande uma mensagem pelo WhatsApp e combine o melhor dia com o consultório.</p>
+    <a class="botao botao-grande" data-zap href="#">Agendar pelo WhatsApp</a>
     <address>
-      Av. Romeu Strazzi, 325 — Sala 418 · Vila Sinibaldi<br>
+      Av. Romeu Strazzi, 325 · Sala 418 — Vila Sinibaldi<br>
       São José do Rio Preto-SP · 15084-010<br>
       <a href="tel:+5517996299995">(17) 99629-9995</a> ·
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Dra.%20Ana%20Paula%20Trombin&amp;query_place_id=ChIJMdbFcm2zvZQR9BpM1UuCQHY" target="_blank" rel="noopener">Como chegar</a>
+      <a data-mapa href="#" target="_blank" rel="noopener">Como chegar</a> ·
+      <a href="https://www.instagram.com/draanapaulatrombin/" target="_blank" rel="noopener">@draanapaulatrombin</a>
     </address>
   </div>
 </section>
@@ -263,14 +225,15 @@
 
 <footer class="rodape">
   <div class="rodape-marca">
-    <span class="marca-nome">Ana Paula <em>Trombin</em></span>
-    <span class="marca-sub">Ortodontia · Harmonização orofacial</span>
+    <span class="marca-nome">Ana Paula Trombin</span>
+    <span class="marca-sub">Ortodontia · Harmonização</span>
   </div>
+  <p>Dra. Ana Paula Trombin · Av. Romeu Strazzi, 325 · Sala 418 · São José do Rio Preto-SP</p>
   <p><a href="https://www.instagram.com/draanapaulatrombin/" target="_blank" rel="noopener">@draanapaulatrombin</a></p>
-  <p class="rodape-previa">Prévia de site feita para a Dra. Ana Paula Trombin com fotos, vídeos e textos publicados nos perfis oficiais. As artes de linha são ilustrativas, feitas em código.</p>
+  <p class="rodape-previa">PRÉVIA de site feita para a Dra. Ana Paula Trombin com fotos, vídeos e textos publicados nos perfis oficiais.</p>
 </footer>
 
-<a class="zap-flutuante" href="https://wa.me/5517996299995?text=Ol%C3%A1%2C%20Dra.%20Ana%20Paula%21%20Vi%20a%20pr%C3%A9via%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+<a class="zap-flutuante" data-zap href="#" aria-label="Agendar pelo WhatsApp">
   <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
 </a>
 
