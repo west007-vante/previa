@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+<rect width="800" height="1000" fill="#0B2328"/>
+<g fill="none" stroke="#E8B470" stroke-width="1.4" stroke-opacity=".8">
+<path d="M400 170 C470 290 560 380 560 480 A160 160 0 0 1 240 480 C240 380 330 290 400 170Z"/>
+<path d="M400 230 C455 325 520 400 520 480 A120 120 0 0 1 280 480 C280 400 345 325 400 230Z" stroke-opacity=".45"/>
+<path d="M400 290 C440 360 480 420 480 480 A80 80 0 0 1 320 480 C320 420 360 360 400 290Z" stroke-opacity=".25"/>
+</g>
+<g>
+<rect x="130" y="760" width="32" height="110" fill="#8C5A2B"/><rect x="170" y="760" width="32" height="110" fill="#A06A33"/>
+<rect x="210" y="760" width="32" height="110" fill="#B4793A"/><rect x="250" y="760" width="32" height="110" fill="#C8873C"/>
+<rect x="290" y="760" width="32" height="110" fill="#D79B52"/><rect x="330" y="760" width="32" height="110" fill="#E8B470"/>
+<rect x="370" y="760" width="32" height="110" fill="#D9C08F"/><rect x="410" y="760" width="32" height="110" fill="#B9BFA4"/>
+<rect x="450" y="760" width="32" height="110" fill="#93AFA7"/><rect x="490" y="760" width="32" height="110" fill="#6E9A98"/>
+<rect x="530" y="760" width="32" height="110" fill="#4E8187"/><rect x="570" y="760" width="32" height="110" fill="#386A73"/>
+<rect x="610" y="760" width="32" height="110" fill="#2A5560"/><rect x="650" y="760" width="32" height="110" fill="#1E444F"/>
+</g>
+<path d="M386 740 l14 -18 l14 18z" fill="#EEEBE5"/>
+<g fill="#9FB4B6" font-family="sans-serif" font-size="18" text-anchor="middle"><text x="146" y="906">pH</text><text x="400" y="906">fluxo</text><text x="666" y="906">7</text></g>
+</svg>
